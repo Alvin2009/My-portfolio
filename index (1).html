@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Alvin Emmanuel Gideon | Digital Creative & Virtual Assistant</title>
+<meta name="description" content="Alvin Emmanuel Gideon is a digital creative, virtual assistant, web designer, and social media manager based in Lagos, Nigeria.">
+<meta property="og:title" content="Alvin Emmanuel Gideon | Digital Creative & Virtual Assistant">
+<meta property="og:description" content="Digital creative, virtual assistant, web designer, and social media manager based in Lagos, Nigeria.">
+<meta property="og:type" content="website">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0b0f'/%3E%3Ctext x='32' y='41' font-size='24' font-family='Arial' font-weight='700' text-anchor='middle' fill='%23f3f2ee'%3EAEG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050505;--bg2:#0d0d0d;--tx:#f3f2ee;--mu:#b5b5b5;--mm:#808080;--cd:#111;--ac:#f3f2ee;--ln:rgba(255,255,255,.10);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:90px;height:auto;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 17px/1.65 Manrope,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.sg{font-family:'Space Grotesk',system-ui,sans-serif;letter-spacing:-.02em;line-height:1.05;margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 40px);margin:0 auto}
+section{padding:110px 0;position:relative}
+.eyebrow{font:500 13px 'Space Grotesk';letter-spacing:.18em;text-transform:uppercase;color:var(--mm);margin-bottom:18px;display:block}
+h2{font-size:clamp(34px,5.5vw,64px);margin-bottom:22px;max-width:15ch}
+p{color:var(--mu);margin:0 0 16px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border-radius:99px;font:600 15px Manrope;border:1px solid var(--ln);transition:.35s;min-height:48px;cursor:pointer;background:transparent;color:var(--tx)}
+.btn.p{background:var(--ac);border-color:var(--ac);color:#050505}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px -10px var(--ac)}
+.btn span{transition:transform .3s}.btn:hover span{transform:translateX(5px)}
+/* loader */
+#ld{position:fixed;inset:0;background:var(--bg);z-index:100;display:grid;place-content:center;text-align:center;transition:opacity .6s,visibility .6s}
+#ld.off{opacity:0;visibility:hidden}
+#ld b{font:700 64px 'Space Grotesk';letter-spacing:.08em}#ld small{color:var(--mu);display:block;margin:6px 0 22px}
+#ld i{display:block;height:2px;background:var(--ln);width:200px;margin:auto;overflow:hidden}#ld i::after{content:"";display:block;height:100%;background:var(--ac);animation:ld 1.1s ease forwards}
+@keyframes ld{from{width:0}to{width:100%}}
+/* nav */
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(1060px,100% - 28px);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border:1px solid var(--ln);border-radius:99px;background:rgba(5,5,5,.6);backdrop-filter:blur(16px);transition:.4s}
+nav.sm{padding:8px 18px;width:min(900px,100% - 28px)}
+.logo{font:700 22px 'Space Grotesk';letter-spacing:.06em}.logo em{color:var(--ac);font-style:normal}
+.links{display:flex;gap:26px;align-items:center;font-size:15px;color:var(--mu)}
+.links a:hover{color:var(--tx)}
+.links .btn{padding:9px 18px;min-height:40px;color:#050505}
+#bg{display:none;background:none;border:1px solid var(--ln);color:var(--tx);border-radius:12px;width:46px;height:46px;font-size:20px;cursor:pointer}
+/* hero */
+#home{min-height:100svh;display:flex;align-items:center;padding:120px 0 70px;overflow:hidden}
+#c{position:absolute;inset:0;width:100%;height:100%}
+.hero{position:relative;z-index:2;pointer-events:none}.hero a,.hero .btn{pointer-events:auto}
+.name{font:500 14px 'Space Grotesk';letter-spacing:.22em;margin-bottom:10px}
+.roles{color:var(--mu);font-size:15px;margin-bottom:30px}
+h1{font-size:clamp(46px,9vw,128px);max-width:10ch;margin-bottom:26px}h1 span{color:var(--mm)}
+.hero p{max-width:520px;font-size:19px;margin-bottom:34px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.glow{position:absolute;width:520px;height:520px;right:-100px;top:10%;background:radial-gradient(circle,rgba(255,255,255,.18),transparent 65%);pointer-events:none}
+/* about/skills */
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.tag{padding:8px 15px;border:1px solid var(--ln);border-radius:99px;font-size:14px;color:var(--tx);background:rgba(255,255,255,.02);transition:.3s}
+.tag:hover{border-color:var(--ac);background:rgba(255,255,255,.12);transform:translateY(-2px)}
+.sub{font:500 13px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase;color:var(--mu);margin:0 0 14px}
+/* services */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;padding:32px 28px;border:1px solid var(--ln);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent);transition:.45s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+.card:hover{transform:translateY(-8px);border-color:rgba(255,255,255,.3);box-shadow:0 20px 50px -25px var(--ac)}
+.card .n{font:500 14px 'Space Grotesk';color:var(--ac);display:flex;justify-content:space-between;margin-bottom:46px}
+.card .n svg{width:26px;height:26px;stroke:var(--ac);fill:none;stroke-width:1.6;transition:.5s}.card:hover .n svg{transform:rotate(12deg) scale(1.2)}
+.card h3{font-size:24px;margin-bottom:12px;transition:transform .4s}.card:hover h3{transform:translateX(5px)}
+.card p{margin:0;font-size:15px}
+/* work */
+.badge{display:inline-flex;align-items:baseline;gap:14px;padding:18px 26px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:rgba(255,255,255,.08);margin:6px 0 44px}
+.badge b{font:700 54px 'Space Grotesk';color:var(--ac);line-height:1}.badge span{max-width:240px;line-height:1.3;color:var(--tx);font-size:15px}
+.pc{display:flex;flex-direction:column;border:1px solid var(--ln);border-radius:22px;overflow:hidden;background:var(--bg2);transition:.45s cubic-bezier(.2,.8,.2,1)}
+.pc:hover{transform:translateY(-10px);box-shadow:0 30px 60px -30px var(--ac);border-color:rgba(255,255,255,.5)}
+.pv{height:200px;overflow:hidden;background:#0a0a0a;border-bottom:1px solid var(--ln)}
+.mock{height:100%;margin:22px 22px 0;border:1px solid var(--ln);border-bottom:0;border-radius:12px 12px 0 0;background:#111;transition:transform .6s;padding:10px}
+.pc:hover .mock{transform:scale(1.06)}
+.dots{display:flex;gap:5px;margin-bottom:12px}.dots i{width:7px;height:7px;border-radius:50%;background:#33333f}
+.mock .t{font:700 22px 'Space Grotesk';margin:18px 8px 10px}.mock .b{height:6px;border-radius:4px;background:#2a2a38;margin:8px;width:70%}.mock .b2{width:45%}.mock .pill{width:80px;height:20px;border-radius:99px;background:var(--ac);margin:16px 8px;opacity:.85}
+.pb{padding:24px;display:flex;flex-direction:column;gap:6px;flex:1}
+.pb h3{font-size:22px;transition:transform .4s}.pc:hover h3{transform:translateX(4px)}
+.pb small{color:var(--ac);font:500 12px 'Space Grotesk';letter-spacing:.12em;text-transform:uppercase}
+.pb p{font-size:15px;margin:4px 0 14px}.pb a{margin-top:auto;font-weight:600;display:inline-flex;gap:8px;align-items:center;min-height:44px}.pb a span{transition:transform .3s}.pc:hover .pb a span{transform:translateX(6px)}
+.plat{margin-top:44px}
+/* timeline */
+.tl{border-left:1px solid var(--ln);margin-left:6px;padding-left:34px;position:relative}
+.tl::before{content:"";position:absolute;left:-6px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 6px rgba(255,255,255,.18)}
+.tl h3{font-size:30px}.tl .meta{color:var(--ac);font:500 14px 'Space Grotesk';margin:6px 0 18px;letter-spacing:.06em}
+.tl ul{margin:0;padding-left:18px;color:var(--mu);max-width:640px}.tl li{margin-bottom:8px}
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.mini .card{padding:26px}.mini h3{font-size:20px;margin-bottom:8px}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:18px}.edu .card h3{font-size:22px}.edu .card small{color:var(--ac);font:500 14px 'Space Grotesk'}
+/* contact */
+#contact{text-align:center;background:radial-gradient(ellipse at 50% 100%,rgba(255,255,255,.16),transparent 60%)}
+#contact h2{font-size:clamp(40px,8vw,104px);max-width:none;margin-inline:auto}
+#contact h2 span{color:var(--ac)}#contact>.wrap>p{max-width:560px;margin:0 auto 34px;font-size:19px}
+.ct{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:48px;color:var(--mu);font-size:15px}.ct b{display:block;color:var(--tx);font:500 12px 'Space Grotesk';letter-spacing:.16em;text-transform:uppercase;margin-bottom:4px}.ct a:hover{color:var(--ac)}
+footer{border-top:1px solid var(--ln);padding:50px 0 40px;font-size:14px;color:var(--mu)}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}.fg .logo{color:var(--tx);font-size:30px;display:block;margin-bottom:8px}
+.fg a{display:block;padding:3px 0}.fg a:hover{color:var(--tx)}.fg h4{color:var(--tx);margin:0 0 10px;font:500 13px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase}
+.cp{margin-top:36px;padding-top:22px;border-top:1px solid var(--ln)}
+/* reveal + cursor */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}.rv.in{opacity:1;transform:none}
+#cur{position:fixed;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:var(--ac);pointer-events:none;z-index:200;transition:width .25s,height .25s,margin .25s,background .25s;display:none;mix-blend-mode:normal}
+#cur.h{width:44px;height:44px;margin:-22px 0 0 -22px;background:rgba(255,255,255,.25);border:1px solid var(--ac)}
+@media(hover:hover) and (pointer:fine){body.cc,body.cc a,body.cc button{cursor:none}#cur{display:block}}
+@media(max-width:860px){
+section{padding:78px 0}.links{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:12px;border:1px solid var(--ln);border-radius:22px;background:rgba(5,5,5,.96)}
+.links.o{display:flex}.links a{padding:14px;font-size:17px}.links .btn{justify-content:center;margin-top:6px}#bg{display:block}
+.two,.grid3,.mini,.edu,.fg{grid-template-columns:1fr}.two{gap:34px}.btn{width:100%;justify-content:center}.row{flex-direction:column}
+.hero p{font-size:17px}.badge b{font-size:44px}.glow{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+#contact{text-align:left;background:radial-gradient(ellipse at 20% 100%,rgba(255,255,255,.07),transparent 60%)}
+#contact h2{font-size:clamp(34px,5vw,60px);max-width:12ch;margin:0 0 22px}
+.cg{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:start}
+.cg .ct{justify-content:flex-start;flex-direction:column;gap:18px;margin:34px 0}
+.cg>div>p{font-size:18px;max-width:440px}
+form{display:grid;gap:18px;padding:34px;border:1px solid var(--ln);border-radius:24px;background:rgba(255,255,255,.02)}
+.f label{display:block;font:500 13px 'Space Grotesk';letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:8px}
+.f input,.f textarea{width:100%;background:#111;color:var(--tx);border:1px solid var(--ln);border-radius:14px;padding:15px 16px;font:400 16px Manrope,sans-serif;transition:border-color .3s,background .3s,box-shadow .3s}
+.f textarea{min-height:150px;resize:vertical}
+.f input:focus,.f textarea:focus{outline:none;border-color:#fff;background:#161616;box-shadow:0 0 0 3px rgba(255,255,255,.12)}
+.f [aria-invalid=true]{border-color:#d8d8d8;border-style:dashed}
+.er{display:block;min-height:0;font-size:13px;color:#e8e8e8;margin-top:6px}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#st{min-height:24px;font-size:15px;color:var(--tx)}
+form .btn:disabled{opacity:.6;cursor:wait;transform:none;box-shadow:none}
+@media(max-width:860px){.cg{grid-template-columns:1fr;gap:36px}form{padding:22px}}
+
+.av{display:inline-flex;gap:10px;align-items:center;padding:7px 14px;border:1px solid var(--ln);border-radius:99px;font-size:13px;color:var(--mu);margin-bottom:22px;background:rgba(5,5,5,.5)}
+.av i{width:7px;height:7px;border-radius:50%;background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.12);animation:pl 2.6s infinite}@keyframes pl{50%{box-shadow:0 0 0 8px rgba(255,255,255,0)}}
+.pr{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center;margin-bottom:110px}
+.pr:nth-child(even) .pv2{order:2}
+.pv2{height:clamp(260px,38vw,420px);border:1px solid var(--ln);border-radius:24px;overflow:hidden;background:#0a0a0a;transition:.5s cubic-bezier(.2,.8,.2,1)}
+.pr:hover .pv2{border-color:rgba(255,255,255,.3);transform:translateY(-6px);box-shadow:0 30px 70px -40px #fff}
+.pv2 .mock{margin:44px 44px 0;padding:14px}.pv2 .mock .t{font-size:clamp(24px,3.4vw,44px);margin:36px 10px 14px}.pv2 .b{height:8px;margin:12px 10px}.pv2 .pill{width:110px;height:28px;margin:26px 10px}
+.pr:hover .mock{transform:scale(1.05)}
+.dots u{margin-left:12px;text-decoration:none;font-size:11px;color:var(--mm);background:#1b1b1b;border-radius:99px;padding:1px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.dots{align-items:center}
+.pv2 img{width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(.55);transition:.6s}.pr:hover .pv2 img{filter:none;transform:scale(1.04)}
+.pt .num{font:700 72px 'Space Grotesk';color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.3);line-height:1;display:block;margin-bottom:10px}
+.pt small{color:var(--mm);font:500 12px 'Space Grotesk';letter-spacing:.14em;text-transform:uppercase}
+.pt h3{font-size:clamp(30px,3.6vw,46px);margin:10px 0 14px;transition:transform .4s}.pr:hover .pt h3{transform:translateX(5px)}
+.pt p{max-width:400px;margin-bottom:26px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);margin-top:44px;border-top:1px solid var(--ln)}
+.s4{padding:30px 26px 10px 0;position:relative}.s4+.s4{padding-left:26px;border-left:1px solid var(--ln)}
+.s4 b{font:700 64px 'Space Grotesk';color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.35);display:block;line-height:1;margin-bottom:22px;transition:.4s}.s4:hover b{color:#fff}
+.s4 h3{font-size:24px;margin-bottom:10px}
+.big{font:700 clamp(90px,22vw,260px)/.85 'Space Grotesk';color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.14);margin-top:40px;letter-spacing:-.04em;user-select:none;overflow:hidden}
+@media(max-width:860px){.pr{grid-template-columns:1fr;gap:26px;margin-bottom:70px}.pr:nth-child(even) .pv2{order:0}.pv2 .mock{margin:28px 24px 0}.steps{grid-template-columns:1fr}.s4,.s4+.s4{padding:26px 0 10px;border-left:0;border-bottom:1px solid var(--ln)}}
+#contact .cg{grid-template-columns:1fr;text-align:center;justify-items:center}#contact h2{max-width:14ch;margin-inline:auto}#contact .cg>div>p{margin-inline:auto}#contact .cg .ct{align-items:center}#contact .row{justify-content:center}
+
+/* ===== 2026 upgrade layer ===== */
+main,footer{position:relative;z-index:1}
+main section{overflow-x:clip}
+.amb{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.amb::after{content:"";position:absolute;inset:0;background:radial-gradient(620px circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.05),transparent 60%)}
+.o{position:absolute;border-radius:50%;will-change:transform}
+.o.a{width:58vmax;height:58vmax;left:-20vmax;top:-18vmax;background:radial-gradient(circle,rgba(255,255,255,.08),transparent 65%);animation:d1 38s ease-in-out infinite alternate}
+.o.b{width:52vmax;height:52vmax;right:-22vmax;top:30vh;background:radial-gradient(circle,rgba(150,165,255,.07),transparent 65%);animation:d2 46s ease-in-out infinite alternate}
+.o.c{width:48vmax;height:48vmax;left:18vw;bottom:-30vmax;background:radial-gradient(circle,rgba(255,225,200,.055),transparent 65%);animation:d1 52s ease-in-out infinite alternate-reverse}
+@keyframes d1{to{transform:translate(18vmax,14vmax) scale(1.15)}}@keyframes d2{to{transform:translate(-14vmax,18vmax) scale(.9)}}
+.gd{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:84px 84px;-webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 50% 30%,#000,transparent 75%)}
+#fx{position:absolute;inset:0;width:100%;height:100%;opacity:.85}
+.gr{position:absolute;inset:0;opacity:.07;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#pg{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;transform-origin:0 0;transform:scaleX(0);background:linear-gradient(90deg,transparent,#fff);box-shadow:0 0 12px rgba(255,255,255,.6)}
+/* loader */
+#ld{background:none;transition:none}
+#ld::before,#ld::after{content:"";position:absolute;left:0;right:0;height:51%;background:#050505;z-index:-1;transition:transform 1.05s cubic-bezier(.77,0,.18,1)}
+#ld::before{top:0}#ld::after{bottom:0}
+#ld>div{transition:opacity .5s,transform .8s cubic-bezier(.7,0,.3,1)}
+#ld.go>div{opacity:0;transform:translateY(-30px) scale(1.05)}
+#ld.go::before{transform:translateY(-101%)}#ld.go::after{transform:translateY(101%)}
+#ld b{font-size:clamp(72px,16vw,150px);line-height:1;text-shadow:0 0 50px rgba(255,255,255,.22)}
+#ld b span{display:inline-block;animation:lr 1.1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k)*.12s)}
+@keyframes lr{from{opacity:0;transform:translateY(60%) scale(.9);filter:blur(12px)}}
+#ld small{margin:10px 0 26px}
+.lc{font:500 14px 'Space Grotesk';letter-spacing:.2em;color:var(--mu);margin-bottom:14px}
+#ld i{width:min(260px,70vw)}#ld i::after{animation:none;width:calc(var(--p,0)*100%);box-shadow:0 0 14px #fff}
+/* reveals */
+.rv{filter:blur(8px);transform:translateY(40px) scale(.98);transition:opacity 1s,transform 1.1s cubic-bezier(.2,.8,.2,1),filter 1s;transition-delay:var(--d,0s)}
+.rv.in{filter:none}
+h1.rv,h2.rv{opacity:1;transform:none;filter:none}
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.06em .02em .14em;margin:-.06em -.02em -.14em}
+.w>i{display:inline-block;font-style:normal;transform:translateY(112%) rotate(5deg);transform-origin:0 100%;transition:transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i)*.07s)}
+.in .w>i{transform:none}
+body:not(.ready) #home .rv.in:not(h1){opacity:0;transform:translateY(40px);filter:blur(8px);transition:none}
+body:not(.ready) #home .in .w>i{transform:translateY(112%) rotate(5deg);transition:none}
+/* type + nav */
+.eyebrow::before{content:"";display:inline-block;width:28px;height:1px;background:currentColor;vertical-align:middle;margin-right:12px}
+.links a:not(.btn){position:relative}.links a.on{color:var(--tx)}
+.links a.on::after{content:"";position:absolute;left:50%;bottom:-8px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#fff;box-shadow:0 0 8px #fff}
+nav{box-shadow:0 10px 40px -20px #000,inset 0 1px 0 rgba(255,255,255,.06)}
+.btn,.btn:hover{transform:translate(var(--bx,0px),calc(var(--by,0px) - var(--h,0px)))}.btn:hover{--h:2px}
+.btn.p{background:linear-gradient(180deg,#fff,#d9d8d3)}
+/* cursor */
+#cr{position:fixed;left:0;top:0;width:40px;height:40px;margin:-20px 0 0 -20px;border:1px solid rgba(255,255,255,.35);border-radius:50%;pointer-events:none;z-index:199;transition:opacity .3s}#cr.h{opacity:0}
+/* hero */
+.glow{animation:flt 14s ease-in-out infinite}
+@keyframes flt{50%{transform:translate(12px,-26px)}}
+.hero{will-change:transform,opacity}
+/* marquee */
+.mq{overflow:hidden;border-block:1px solid var(--ln);padding:28px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.mt{display:flex;width:max-content;animation:mq 46s linear infinite}.mq:hover .mt{animation-play-state:paused}
+.mt span{font:700 clamp(34px,6vw,72px)/1 'Space Grotesk';letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.32);white-space:nowrap}
+.mt span:nth-child(even){color:var(--tx);-webkit-text-stroke:0}
+.mt span::after{content:"";display:inline-block;width:.16em;height:.16em;border-radius:50%;background:rgba(255,255,255,.4);margin:0 .6em;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* floating depth shapes */
+#about::before,#experience::before{content:"";position:absolute;z-index:-1;width:min(46vw,520px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.08);box-shadow:0 0 0 44px rgba(255,255,255,.012),0 0 0 45px rgba(255,255,255,.05);pointer-events:none;animation:ring 50s linear infinite}
+#about::before{right:-12%;top:6%}#experience::before{left:-16%;top:28%;animation-direction:reverse}
+@keyframes ring{from{transform:perspective(900px) rotateX(68deg) rotateZ(0)}to{transform:perspective(900px) rotateX(68deg) rotateZ(360deg)}}
+#services::after,#credentials::after{content:"";position:absolute;z-index:-1;right:4%;top:60px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.26),rgba(255,255,255,.04) 45%,transparent 70%);pointer-events:none;animation:flt 9s ease-in-out infinite}
+#credentials::after{right:auto;left:3%;top:auto;bottom:40px;width:110px;height:110px;animation-duration:11s}
+#contact::before{content:"";position:absolute;z-index:-1;left:50%;top:50%;width:min(80vw,760px);aspect-ratio:1;margin:calc(min(80vw,760px)/-2) 0 0 calc(min(80vw,760px)/-2);border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.09),transparent 65%);animation:pl2 9s ease-in-out infinite}
+@keyframes pl2{50%{transform:scale(1.15);opacity:.6}}
+/* about glass */
+#about .two>div:first-child{position:sticky;top:130px}
+#about .two>div:last-child{position:relative;padding:38px;border:1px solid var(--ln);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.01));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+#about .two>div:last-child::before{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--ln);border-radius:28px;z-index:-1}
+/* cards, tilt, spotlight */
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.09),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}.card:hover::before{opacity:1}
+.card .n svg{box-sizing:content-box;padding:10px;border:1px solid var(--ln);border-radius:14px;background:rgba(255,255,255,.04)}
+.tilt,.tilt:hover{transform:perspective(900px) translateY(var(--ty,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out,border-color .4s,box-shadow .45s,opacity .9s,filter .9s;will-change:transform}
+.tilt:hover{--ty:-8px}.badge.tilt:hover{--ty:-3px}
+.rv.tilt{transition:transform 1.1s cubic-bezier(.2,.8,.2,1) var(--d,0s),opacity 1s var(--d,0s),filter 1s var(--d,0s)}
+.rv.tilt:not(.in){transform:perspective(900px) translateY(40px)}
+.tag{animation:tf 7s ease-in-out infinite}.tag:nth-child(3n){animation-delay:-2.3s}.tag:nth-child(3n+1){animation-delay:-4.6s}
+@keyframes tf{50%{translate:0 -3px}}
+/* projects */
+.pv2{position:relative}
+.pv2::after{content:"";position:absolute;inset:0;background:radial-gradient(520px circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.12),transparent 42%);opacity:0;transition:opacity .4s;pointer-events:none}.pv2:hover::after{opacity:1}
+.pv2 .mock{translate:calc(var(--px,0)*12px) calc(var(--py,0)*9px)}
+.pr .pv2.tilt,.pr:hover .pv2.tilt{transform:perspective(900px) translateY(var(--ty,0px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.pv2.tilt:hover{--ty:-6px}
+.pt .num{transition:-webkit-text-stroke-color .4s,color .4s}.pr:hover .pt .num{-webkit-text-stroke-color:rgba(255,255,255,.8)}
+/* process + timeline */
+.steps{position:relative}
+.steps::before{content:"";position:absolute;top:-1px;left:0;height:1px;width:calc(var(--p,0)*100%);background:#fff;box-shadow:0 0 12px rgba(255,255,255,.7)}
+.s4.on b{color:#fff;-webkit-text-stroke-color:#fff;text-shadow:0 0 30px rgba(255,255,255,.35)}
+.tl::after{content:"";position:absolute;left:-1px;top:0;bottom:0;width:2px;transform-origin:top;transform:scaleY(var(--p,0));background:linear-gradient(#fff,rgba(255,255,255,.15));box-shadow:0 0 10px rgba(255,255,255,.4)}
+.tl::before{animation:pl 2.6s infinite}
+/* contact + footer */
+.ct>div{width:min(100%,360px);padding:14px 20px;border:1px solid var(--ln);border-radius:16px;background:rgba(255,255,255,.03);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:border-color .3s,background .3s}.ct>div:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.06)}
+.big{transition:-webkit-text-stroke-color .6s,letter-spacing .8s}.big:hover{-webkit-text-stroke-color:rgba(255,255,255,.45);letter-spacing:-.02em}
+@media(max-width:860px){#about .two>div:first-child{position:static}#about .two>div:last-child{padding:24px}#about .two>div:last-child::before{display:none}.links a.on::after{display:none}#about::before,#experience::before{opacity:.5}.mq{padding:20px 0}}
+@media(prefers-reduced-motion:reduce){.rv,.rv:not(.in){filter:none}.w>i{transform:none}.o,.mt,.tag{animation:none}}
+</style>
+</head>
+<body>
+<div id="pg"></div><div class="amb" aria-hidden="true"><div class="o a"></div><div class="o b"></div><div class="o c"></div><div class="gd"></div><canvas id="fx"></canvas><div class="gr"></div></div>
+<div id="ld" role="status"><div><b><span style="--k:0">A</span><span style="--k:1">E</span><span style="--k:2">G</span></b><small>Loading digital experience...</small><div class="lc"><span id="lcn">0</span>%</div><i></i></div></div>
+<div id="cur" aria-hidden="true"></div>
+<nav id="nav" aria-label="Main">
+<a href="#home" class="logo" aria-label="AEG home">A<em>E</em>G</a>
+<button id="bg" aria-label="Open menu" aria-expanded="false">☰</button>
+<div class="links" id="lk"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a><a href="Alvin_Emmanuel_Gideon_CV.pdf" target="_blank" rel="noopener">CV</a><a href="#contact" class="btn p">Let's Talk</a></div>
+</nav>
+<main>
+<section id="home"><canvas id="c" aria-hidden="true"></canvas><div class="glow"></div>
+<div class="wrap hero">
+<div class="av rv"><i></i>Available for opportunities</div>
+<div class="name rv">ALVIN EMMANUEL GIDEON</div>
+<div class="roles rv" style="--d:.08s">Digital Creative • Virtual Assistant • Web Designer • Social Media Manager<br>Lagos State, Nigeria</div>
+<h1 class="rv" style="--d:.16s">I turn ideas into <span>digital experiences.</span></h1>
+<p class="rv" style="--d:.26s">I create digital experiences, manage online operations, build websites, and help brands present themselves professionally online.</p>
+<div class="row rv" style="--d:.36s"><a class="btn p" href="Alvin_Emmanuel_Gideon_CV.pdf" target="_blank" rel="noopener" aria-label="Read my CV (opens in a new tab)">Read My CV <span>→</span></a><a class="btn" href="#contact">Let's Work Together</a></div>
+</div></section>
+
+<div class="mq" aria-hidden="true"><div class="mt"><span>Virtual Assistance</span><span>Web Design</span><span>Social Media Management</span><span>Graphic Design</span><span>Digital Marketing</span><span>Data &amp; Administrative Support</span><span>Virtual Assistance</span><span>Web Design</span><span>Social Media Management</span><span>Graphic Design</span><span>Digital Marketing</span><span>Data &amp; Administrative Support</span></div></div>
+
+<section id="about"><div class="wrap two">
+<div><span class="eyebrow rv">About</span><h2 class="rv">More than a portfolio. A digital toolkit.</h2></div>
+<div class="rv" style="--d:.1s"><p class="sg" style="color:var(--tx);font-size:21px;line-height:1.3;margin-bottom:22px">Alvin Emmanuel Gideon — Digital Creative, Virtual Assistant, Web Designer &amp; Social Media Manager.</p><p>I use Google Workspace and other digital tools to organize information, manage tasks, create documents, and handle data.</p>
+<p>Alongside that, I work in social media management, graphic design, digital marketing, website creation, and AI-assisted website development.</p>
+<p>I enjoy learning new software, I work well independently, and I'm comfortable working remotely.</p>
+<p class="sub" style="margin-top:26px">Proficient in</p>
+<div class="tags"><span class="tag">Google Sheets</span><span class="tag">Google Docs</span><span class="tag">Google Calendar</span><span class="tag">Google Meet</span><span class="tag">Google Workspace</span><span class="tag">Microsoft PowerPoint</span></div></div>
+</div></section>
+
+<section id="services"><div class="wrap"><span class="eyebrow rv">Services</span><h2 class="rv">What I Can Help With</h2>
+<div class="grid3" id="sv" style="margin-top:44px"></div></div></section>
+
+<section id="skills"><div class="wrap"><span class="eyebrow rv">Skills</span><h2 class="rv">Skills &amp; Tools</h2>
+<div class="grid3" style="margin-top:44px">
+<div class="card rv"><p class="sub">Administrative &amp; Data</p><div class="tags"><span class="tag">Virtual Assistance</span><span class="tag">Data Entry</span><span class="tag">Administrative Support</span><span class="tag">Digital Organization</span><span class="tag">Google Sheets</span><span class="tag">Google Docs</span><span class="tag">Google Calendar</span><span class="tag">Google Meet</span><span class="tag">Google Workspace</span><span class="tag">Microsoft PowerPoint</span><span class="tag">Online Research</span><span class="tag">Data Organization</span><span class="tag">Document Management</span><span class="tag">Digital File Organization</span></div></div>
+<div class="card rv" style="--d:.1s"><p class="sub">Communication &amp; Work</p><div class="tags"><span class="tag">Written Communication</span><span class="tag">Verbal Communication</span><span class="tag">Time Management</span><span class="tag">Attention to Detail</span><span class="tag">Organization</span><span class="tag">Problem Solving</span><span class="tag">Fast Learning</span><span class="tag">Independent Work</span><span class="tag">Remote Collaboration</span><span class="tag">English (Fluent)</span></div></div>
+<div class="card rv" style="--d:.2s"><p class="sub">Digital Skills</p><div class="tags"><span class="tag">Social Media Management</span><span class="tag">Canva</span><span class="tag">Graphic Design</span><span class="tag">Digital Marketing</span><span class="tag">Facebook Ads</span><span class="tag">Website Design</span><span class="tag">AI-Assisted Website Development</span><span class="tag">Lovable AI</span><span class="tag">WordPress</span><span class="tag">Wix</span><span class="tag">GoDaddy</span></div></div>
+</div></div></section>
+
+<section id="work"><div class="wrap"><span class="eyebrow rv">Projects</span><h2 class="rv">Selected Work</h2>
+<p class="rv">I've designed and built websites for small businesses and brands. New project showcases are on the way.</p>
+<div class="badge rv"><b>10+</b><span>Websites Designed &amp; Built<br><small style="color:var(--mu)">for Instagram-based businesses and brands</small></span></div>
+<div id="pj" style="margin-top:20px"><div id="pe" class="card rv" style="padding:44px 36px;border-style:dashed;max-width:720px"><h3 style="font-size:28px;margin-bottom:12px">Project showcases coming soon</h3><p style="max-width:520px">I'm putting together case studies of my latest work. In the meantime, you can read my CV or get in touch to see examples.</p><div class="row" style="margin-top:22px"><a class="btn p" href="Alvin_Emmanuel_Gideon_CV.pdf" target="_blank" rel="noopener">Read My CV <span>→</span></a><a class="btn" href="#contact">Ask for Examples</a></div></div></div>
+</div></section>
+
+<section id="process"><div class="wrap"><span class="eyebrow rv">Process</span><h2 class="rv">How I Work</h2>
+<div class="steps"><div class="s4 rv"><b>01</b><h3>Understand</h3><p>Understand the goal, audience, and requirements.</p></div><div class="s4 rv" style="--d:.1s"><b>02</b><h3>Organize</h3><p>Structure the information, content, and workflow.</p></div><div class="s4 rv" style="--d:.2s"><b>03</b><h3>Create</h3><p>Design and build the digital experience.</p></div><div class="s4 rv" style="--d:.3s"><b>04</b><h3>Refine</h3><p>Review, improve, and polish the final result.</p></div></div></div></section>
+
+<section id="experience"><div class="wrap"><span class="eyebrow rv">Experience</span><h2 class="rv">Where I've worked</h2>
+<div class="tl rv" style="margin-top:44px"><h3>Social Media Manager</h3><div class="meta">AVM STUDIOS · May 2025 – March 2026</div>
+<ul><li>Managed the academy's Instagram account and supported its day-to-day online activities.</li><li>Prepared and organized content for social media.</li><li>Created graphics and visual materials using Canva.</li><li>Assisted with audience engagement and communication.</li><li>Helped maintain the account's visual consistency.</li><li>Worked with digital tools to organize and manage social media tasks.</li></ul></div>
+<p class="sub" style="margin:70px 0 16px">Additional experience</p>
+<div class="mini"><div class="card rv"><h3>Digital Promotion</h3><p>Experience promoting digital content and services and communicating with people online.</p></div><div class="card rv" style="--d:.1s"><h3>Graphic Design</h3><p>Experience creating social media graphics and other visual materials using Canva.</p></div><div class="card rv" style="--d:.2s"><h3>Website Creation</h3><p>Practical experience designing and building websites for small businesses and brands using AI-assisted and website-building platforms.</p></div></div>
+</div></section>
+
+<section id="credentials"><div class="wrap two">
+<div><span class="eyebrow rv">Certifications</span><h2 class="rv" style="font-size:clamp(30px,4vw,48px)">Courses completed</h2>
+<div class="rv" style="display:grid;gap:14px"><div class="card"><h3 style="font-size:21px">Digital and Social Media Marketing</h3><p>Atingi Digital</p></div><div class="card"><h3 style="font-size:21px">Facebook Ads Manager</h3><p>Great Learning</p></div></div></div>
+<div><span class="eyebrow rv">Education</span><h2 class="rv" style="font-size:clamp(30px,4vw,48px)">Where I study</h2>
+<div class="rv" style="display:grid;gap:14px"><div class="card"><small style="color:var(--ac)">2026 – 2029 (Expected)</small><h3 style="font-size:21px;margin:6px 0">B.Sc. Computer Science</h3><p>National Open University of Nigeria (NOUN)</p></div><div class="card"><small style="color:var(--ac)">2019 – 2025</small><h3 style="font-size:21px;margin:6px 0">Secondary Education</h3><p>Senior Secondary School Certificate (SSCE)</p></div></div></div>
+</div></section>
+
+<section id="contact"><div class="wrap cg">
+<div><span class="eyebrow rv">Contact</span><h2 class="rv">Let's create something meaningful.</h2>
+<p class="rv">Whether you need digital support, a website, social media assistance, or help managing online tasks, I'd love to hear about your project.</p>
+<div class="ct rv"><div><b>Email</b><a href="mailto:alvingideon380@gmail.com">alvingideon380@gmail.com</a></div><div><b>Phone</b><a href="tel:+2348119590880">08119590880</a></div><div><b>WhatsApp</b><a href="https://wa.me/2348119590880?text=Hello%20Alvin" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></div><div><b>Location</b>Lagos State, Nigeria</div></div><div class="row rv"><a class="btn p" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alvingideon380@gmail.com&amp;su=Hello%20Alvin" target="_blank" rel="noopener noreferrer">Email Me <span>→</span></a><a class="btn" href="Alvin_Emmanuel_Gideon_CV.pdf" target="_blank" rel="noopener">Read My CV</a><a class="btn" href="Alvin_Emmanuel_Gideon_CV.pdf" download>Download CV</a></div></div>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="fg">
+<div><a href="#home" class="logo" style="display:block">A<em>E</em>G</a><strong style="color:var(--tx)">Alvin Emmanuel Gideon</strong><br>Digital Creative • Virtual Assistant • Web Designer • Social Media Manager</div>
+<div><h4>Links</h4><a href="#home">Home</a><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="Alvin_Emmanuel_Gideon_CV.pdf" target="_blank" rel="noopener">CV</a><a href="#contact">Contact</a></div>
+<div><h4>Contact</h4><a href="mailto:alvingideon380@gmail.com">alvingideon380@gmail.com</a><a href="tel:+2348119590880">08119590880</a><a href="https://wa.me/2348119590880" target="_blank" rel="noopener noreferrer">WhatsApp</a>Lagos State, Nigeria</div>
+</div><div class="big" aria-hidden="true">AEG</div><div class="cp">© 2026 Alvin Emmanuel Gideon. All rights reserved.</div></div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+var S=[["Virtual Assistance","Administrative support, organization, online research, data entry, scheduling, and digital organization.","M4 6h16M4 12h16M4 18h10"],
+["Web Design","Websites for small businesses and Instagram-based brands, built with Lovable AI, WordPress, Wix, and GoDaddy.","M3 5h18v14H3zM3 9h18M7 7h.01"],
+["Social Media Management","Content support, social media organization, digital presence management, and Facebook advertising.","M12 21s-7-4.6-7-10a4 4 0 0 1 7-2 4 4 0 0 1 7 2c0 5.4-7 10-7 10z"],
+["Graphic Design","Clean digital graphics and visual communication using tools such as Canva.","M12 3l9 9-9 9-9-9zM12 8v8"],
+["Digital Marketing","Social media marketing, Facebook Ads, and digital campaign support.","M4 20V10M10 20V4M16 20v-8M22 20H2"],
+["Data &amp; Administrative Support","Data entry, Google Workspace, spreadsheets, documentation, and organized digital workflows.","M4 4h16v16H4zM4 10h16M10 4v16"]];
+var sv=document.getElementById('sv');
+S.forEach(function(s,i){sv.insertAdjacentHTML('beforeend','<div class="card rv" style="--d:'+(i%3)*.1+'s"><div class="n"><span>0'+(i+1)+'</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+s[2]+'"/></svg></div><h3>'+s[0]+'</h3><p>'+s[1]+'</p></div>')});
+// To show real screenshots, put an image address in the last field of a project (img).
+// ADD PROJECTS HERE LATER. Each project is: ["Name","https://live-link","One-line description","optional screenshot image address"]
+// Example: ["My Project","https://example.com","What I built and for whom.","images/my-project.jpg"]
+var P=[];
+var pj=document.getElementById('pj');
+if(P.length){var pe0=document.getElementById('pe');if(pe0)pe0.remove()}
+P.forEach(function(p,i){var dom=p[1].replace('https://',''),vis=p[3]?'<img src="'+p[3]+'" alt="Screenshot of the '+p[0]+' website" loading="lazy">':'<div class="mock"><div class="dots"><i></i><i></i><i></i><u>'+dom+'</u></div><div class="t">'+p[0]+'</div><div class="b"></div><div class="b b2"></div><div class="pill"></div></div>';
+pj.insertAdjacentHTML('beforeend','<article class="pr rv"><div class="pv2" role="img" aria-label="Preview frame for the '+p[0]+' website">'+vis+'</div><div class="pt"><span class="num">0'+(i+1)+'</span><h3>'+p[0]+'</h3><p>'+p[2]+'</p><a class="btn" href="'+p[1]+'" target="_blank" rel="noopener noreferrer" aria-label="View project: '+p[0]+' (opens in a new tab)">View Project <span>→</span></a></div></article>')});
+
+var ld=document.getElementById('ld');
+function hide(){ld.classList.add('off');setTimeout(function(){ld.style.display='none'},700)}
+
+var nav=document.getElementById('nav'),bg=document.getElementById('bg'),lk=document.getElementById('lk');
+addEventListener('scroll',function(){nav.classList.toggle('sm',scrollY>60)},{passive:true});
+bg.onclick=function(){var o=lk.classList.toggle('o');bg.setAttribute('aria-expanded',o);bg.textContent=o?'✕':'☰'};
+lk.addEventListener('click',function(e){if(e.target.tagName==='A'){lk.classList.remove('o');bg.textContent='☰'}});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+var fine=matchMedia('(hover:hover) and (pointer:fine)').matches,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var cur=document.getElementById('cur');
+if(fine){document.body.classList.add('cc');addEventListener('mousemove',function(e){cur.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)'});
+document.addEventListener('mouseover',function(e){cur.classList.toggle('h',!!e.target.closest('a,button,.pc,.card,.tag'))})}
+
+try{
+if(!window.THREE)throw 0;
+var cv=document.getElementById('c'),mob=innerWidth<860,low=(navigator.hardwareConcurrency||4)<=4;
+var r=new THREE.WebGLRenderer({canvas:cv,antialias:!mob,alpha:true,powerPreference:'low-power'});
+r.setPixelRatio(Math.min(devicePixelRatio,mob?1.5:2));
+var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(45,1,.1,50);cam.position.z=7;
+var g=new THREE.Group();sc.add(g);
+var det=(mob||low)?0:1;
+var geo=new THREE.IcosahedronGeometry(1.7,det);
+var core=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({color:0x2a2a2a,metalness:1,roughness:.18,flatShading:true}));g.add(core);var core2=new THREE.Mesh(new THREE.OctahedronGeometry(.9,0),new THREE.MeshStandardMaterial({color:0xd8d8d8,metalness:1,roughness:.12,flatShading:true}));g.add(core2);
+var wire=new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(2.15,det)),new THREE.LineBasicMaterial({color:0xffffff,transparent:true,opacity:.55}));g.add(wire);
+var ring=new THREE.Mesh(new THREE.TorusGeometry(2.9,.012,8,120),new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:.28}));ring.rotation.x=1.2;g.add(ring);
+var ring2=ring.clone();ring2.rotation.set(.4,.6,0);ring2.scale.setScalar(.88);g.add(ring2);
+var n=(mob||low)?220:600,pa=new Float32Array(n*3);
+for(var i=0;i<n;i++){var rr=3.2+Math.random()*4,th=Math.random()*6.283,ph=Math.acos(2*Math.random()-1);pa[i*3]=rr*Math.sin(ph)*Math.cos(th);pa[i*3+1]=rr*Math.sin(ph)*Math.sin(th);pa[i*3+2]=rr*Math.cos(ph)-1}
+var pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pa,3));
+var pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0xdddddd,size:.035,transparent:true,opacity:.7}));sc.add(pts);
+sc.add(new THREE.AmbientLight(0xffffff,.35));
+var L1=new THREE.PointLight(0xffffff,2.2,30);L1.position.set(4,3,5);sc.add(L1);
+var L2=new THREE.PointLight(0xffffff,1.7,30);L2.position.set(-5,-2,4);sc.add(L2);
+var mx=0,my=0,vis=true;
+addEventListener('pointermove',function(e){mx=e.clientX/innerWidth*2-1;my=e.clientY/innerHeight*2-1});
+function rs(){var w=cv.clientWidth,h=cv.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();var wide=w>860;g.position.x=wide?2.6:0;g.position.y=wide?0:1.9;g.scale.setScalar(wide?1:.72)}
+rs();addEventListener('resize',rs);
+new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+var t=0;
+function loop(){requestAnimationFrame(loop);if(!vis||document.hidden)return;
+t+=rm?0:.005;g.rotation.y=t+mx*.35+scrollY*.0025;g.rotation.x=Math.sin(t*.7)*.15+my*.25;wire.rotation.y=-t*.6;core2.rotation.y=-t*1.4;core2.rotation.x=t*.8;ring.rotation.z=t*.5;ring2.rotation.z=-t*.4;pts.rotation.y=t*.15+mx*.08;pts.rotation.x=my*.05;
+L1.position.x=4+mx*3;L1.position.y=3-my*3;cam.position.x+=(mx*.5-cam.position.x)*.04;cam.position.y+=(-my*.4-cam.position.y)*.04;cam.lookAt(0,0,0);r.render(sc,cam)}
+loop();
+}catch(e){document.getElementById('c').style.display='none'}
+})();
+</script>
+
+<script>
+(function(){
+var d=document,b=d.body,fine=matchMedia('(hover:hover) and (pointer:fine)').matches,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function $(s){return Array.prototype.slice.call(d.querySelectorAll(s))}
+/* loader */
+var ld=d.getElementById('ld'),cn=d.getElementById('lcn'),done=0;
+function fin(){if(done)return;done=1;ld.classList.add('go');setTimeout(function(){b.classList.add('ready')},600);setTimeout(function(){ld.classList.add('off');ld.style.display='none'},1800)}
+var t0=performance.now(),D=rm?200:1200;
+(function tk(n){var p=Math.min(1,(n-t0)/D),e=1-Math.pow(1-p,3);cn.textContent=Math.round(e*100);ld.style.setProperty('--p',e);if(p<1)requestAnimationFrame(tk);else setTimeout(fin,250)})(t0);
+setTimeout(fin,4500);
+try{
+/* word-by-word headings */
+function sp(n,c){Array.prototype.slice.call(n.childNodes).forEach(function(x){
+if(x.nodeType===3){var f=d.createDocumentFragment();x.textContent.split(/(\s+)/).forEach(function(s){if(!s)return;if(/^\s+$/.test(s)){f.appendChild(d.createTextNode(' '))}else{var w=d.createElement('span'),i=d.createElement('i');w.className='w';i.style.setProperty('--i',c.k++);i.textContent=s;w.appendChild(i);f.appendChild(w)}});x.parentNode.replaceChild(f,x)}
+else if(x.nodeType===1&&x.tagName!=='BR')sp(x,c)})}
+$('h1,h2').forEach(function(h){sp(h,{k:0})});
+/* pointer light */
+addEventListener('pointermove',function(e){var s=d.documentElement.style;s.setProperty('--gx',e.clientX+'px');s.setProperty('--gy',e.clientY+'px')},{passive:true});
+/* tilt, spotlight, magnetic buttons, cursor ring */
+if(fine&&!rm){
+var to=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var el=e.target;to.unobserve(el);setTimeout(function(){el.classList.remove('rv')},1800)}})},{threshold:.12});
+$('.card,.pv2,.badge').forEach(function(el){el.classList.add('tilt');if(el.classList.contains('rv'))to.observe(el);
+var m=el.classList.contains('pv2')?5:7,S=el.style;
+el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+S.setProperty('--ry',((x-.5)*m*2).toFixed(2)+'deg');S.setProperty('--rx',((.5-y)*m*2).toFixed(2)+'deg');S.setProperty('--mx',(x*100)+'%');S.setProperty('--my',(y*100)+'%');S.setProperty('--px',(x*2-1).toFixed(2));S.setProperty('--py',(y*2-1).toFixed(2))});
+el.addEventListener('pointerleave',function(){S.setProperty('--rx','0deg');S.setProperty('--ry','0deg');S.setProperty('--px',0);S.setProperty('--py',0)})});
+$('.btn').forEach(function(el){el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--bx',((e.clientX-r.left-r.width/2)*.2)+'px');el.style.setProperty('--by',((e.clientY-r.top-r.height/2)*.3)+'px')});el.addEventListener('pointerleave',function(){el.style.setProperty('--bx','0px');el.style.setProperty('--by','0px')})});
+var cr=d.createElement('div');cr.id='cr';b.appendChild(cr);var cx=0,cy=0,tx=0,ty=0;
+addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY},{passive:true});
+d.addEventListener('mouseover',function(e){cr.classList.toggle('h',!!e.target.closest('a,button,.card,.tag'))});
+(function f(){cx+=(tx-cx)*.16;cy+=(ty-cy)*.16;cr.style.transform='translate('+cx+'px,'+cy+'px)';requestAnimationFrame(f)})();
+}
+/* scroll: progress, hero depth, timeline, process, nav state */
+var pg=d.getElementById('pg'),hero=d.querySelector('.hero'),tl=d.querySelector('.tl'),st=d.querySelector('.steps'),tkd=0;
+function prog(el){var r=el.getBoundingClientRect(),p=(innerHeight*.65-r.top)/r.height;el.style.setProperty('--p',Math.max(0,Math.min(1,p)).toFixed(3))}
+function sc(){var y=scrollY,h=d.documentElement.scrollHeight-innerHeight,vh=innerHeight;pg.style.transform='scaleX('+(h>0?y/h:0)+')';
+if(!rm&&y<vh*1.2){hero.style.transform='translateY('+(y*.18)+'px)';hero.style.opacity=Math.max(0,1-y/(vh*.75))}
+prog(tl);prog(st)}
+addEventListener('scroll',function(){if(!tkd){tkd=1;requestAnimationFrame(function(){tkd=0;sc()})}},{passive:true});addEventListener('resize',sc);sc();
+var ls=$('.links a:not(.btn)'),so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)ls.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});
+$('main section[id]').forEach(function(s){so.observe(s)});
+var so2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');so2.unobserve(e.target)}})},{threshold:.6});
+$('.s4').forEach(function(s){so2.observe(s)});
+/* ambient particles */
+var fx=d.getElementById('fx'),x=fx.getContext('2d'),W,H,N=innerWidth<860?26:58,P=[],vis=1;
+function rz(){var r=Math.min(devicePixelRatio||1,1.5);W=innerWidth;H=innerHeight;fx.width=W*r;fx.height=H*r;x.setTransform(r,0,0,r,0,0)}
+rz();addEventListener('resize',rz);
+for(var i=0;i<N;i++)P.push({x:Math.random()*W,y:Math.random()*H,r:.4+Math.random()*1.3,z:Math.random(),vx:(Math.random()-.5)*.12,vy:-.04-Math.random()*.14,a:.12+Math.random()*.4,ph:Math.random()*6.3});
+function dr(t){x.clearRect(0,0,W,H);P.forEach(function(p){if(!rm){p.x+=p.vx;p.y+=p.vy}
+var yy=((p.y-scrollY*p.z*.2)%H+H)%H,xx=(p.x%W+W)%W,tw=rm?1:.65+.35*Math.sin(t*.001+p.ph);
+x.fillStyle='rgba(255,255,255,'+(p.a*tw).toFixed(3)+')';x.beginPath();x.arc(xx,yy,p.r,0,6.283);x.fill()})}
+(function lp(t){if(!rm)requestAnimationFrame(lp);if(!d.hidden)dr(t||0)})(0);
+}catch(e){}
+})();
+</script>
+</body>
+</html>
