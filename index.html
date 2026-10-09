@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#174D3A">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23174D3A'/%3E%3Ctext x='32' y='41' font-size='24' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23B9D5C5'%3EAEG%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23174D3A'/%3E%3Ctext x='32' y='41' font-size='24' font-family='Georgia,serif' font-weight='700' text-anchor='middle' fill='%23B9D5C5'%3ECD%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 <style>
@@ -47,7 +47,7 @@ p{color:var(--mu);margin:0 0 16px;font-weight:500}
 #ld>div{transition:opacity .5s,transform .8s cubic-bezier(.7,0,.3,1)}
 #ld.go>div{opacity:0;transform:translateY(-24px)}
 #ld.go::before{transform:translateY(-101%)}#ld.go::after{transform:translateY(101%)}
-#ld b{font:500 clamp(64px,12vw,120px)/1 var(--sf);letter-spacing:.06em;color:var(--tx)}
+#ld b{font:500 clamp(44px,10vw,96px)/1.05 var(--sf);letter-spacing:.06em;color:var(--tx)}
 #ld b span{display:inline-block;animation:lr 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k)*.1s)}
 @keyframes lr{from{opacity:0;transform:translateY(40%)}}
 #ld small{color:var(--mu);display:block;margin:12px 0 22px;font-size:15px;font-weight:600}
@@ -59,7 +59,7 @@ p{color:var(--mu);margin:0 0 16px;font-weight:500}
 /* nav */
 nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);width:min(1060px,100% - 28px);z-index:50;display:flex;align-items:center;justify-content:space-between;padding:12px 22px;border:1px solid var(--ln);border-radius:99px;background:rgba(23,77,58,.96);box-shadow:0 10px 28px -14px rgba(10,40,28,.55);transition:padding .4s,width .4s;color:var(--tx)}
 nav.sm{padding:8px 18px;width:min(900px,100% - 28px)}
-.logo{font:600 24px var(--sf);letter-spacing:.06em}.logo em{color:var(--cu);font-style:normal}
+.logo{font:600 21px var(--sf);letter-spacing:.08em;white-space:nowrap}.logo em{color:var(--cu);font-style:normal}
 .links{display:flex;gap:28px;align-items:center;font-size:15px;font-weight:600;color:var(--mu)}
 .links a:not(.btn){position:relative;transition:color .25s}
 .links a:hover{color:var(--tx)}
@@ -163,7 +163,7 @@ form{display:grid;gap:18px;padding:34px;border:1px solid var(--ln);border-radius
 form .btn:disabled{opacity:.6;cursor:wait}
 /* footer */
 footer{--bg:#123B2D;border-top:0;padding:60px 0 40px;font-size:15px;font-weight:500;color:var(--mu);background:var(--bg)}
-.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}.fg .logo{color:var(--tx);font-size:30px;display:block;margin-bottom:10px}
+.fg{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px}.fg .logo{color:var(--tx);font-size:28px;display:block;margin-bottom:10px}
 .fg a{display:block;padding:3px 0;transition:color .25s}.fg a:hover{color:var(--tx);text-decoration:underline;text-underline-offset:4px}.fg h4{color:var(--tx);margin:0 0 12px;font:700 15px var(--ss)}
 .cp{margin-top:40px;padding-top:22px;border-top:1px solid var(--ln);color:var(--mm);font-size:14px;font-weight:500}
 /* reveal */
@@ -192,9 +192,9 @@ section{padding:84px 0}
 </head>
 <body>
 <div id="pg"></div>
-<div id="ld" class="dk" role="status"><div><b><span style="--k:0">A</span><span style="--k:1">E</span><span style="--k:2">G</span></b><small>Loading digital experience...</small><div class="lc"><span id="lcn">0</span>%</div><i></i></div></div>
+<div id="ld" class="dk" role="status"><div><b><span style="--k:0">C</span><span style="--k:1">O</span><span style="--k:2">D</span><span style="--k:3">E</span><span style="--k:4">X</span><br><span style="--k:5">D</span><span style="--k:6">E</span><span style="--k:7">S</span><span style="--k:8">I</span><span style="--k:9">G</span><span style="--k:10">N</span><span style="--k:11">S</span></b><small>Loading digital experience...</small><div class="lc"><span id="lcn">0</span>%</div><i></i></div></div>
 <nav id="nav" class="dk" aria-label="Main">
-<a href="#home" class="logo" aria-label="AEG home">A<em>E</em>G</a>
+<a href="#home" class="logo" aria-label="Codex Designs home">CODEX <em>DESIGNS</em></a>
 <button id="bg" aria-label="Open menu" aria-expanded="false">☰</button>
 <div class="links" id="lk"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a><a href="#contact" class="btn p">Let's Talk</a></div>
 </nav>
@@ -260,7 +260,7 @@ section{padding:84px 0}
 </div></section>
 </main>
 <footer class="dk"><div class="wrap"><div class="fg">
-<div><a href="#home" class="logo" style="display:block">A<em>E</em>G</a><strong style="color:var(--tx)">Alvin Emmanuel Gideon</strong><br>Website Designer &amp; Developer • Digital Creative • Virtual Assistant • Social Media Manager</div>
+<div><a href="#home" class="logo" style="display:block">CODEX <em>DESIGNS</em></a><strong style="color:var(--tx)">Alvin Emmanuel Gideon</strong><br>Website Designer &amp; Developer • Digital Creative • Virtual Assistant • Social Media Manager</div>
 <div><h4>Links</h4><a href="#home">Home</a><a href="#about">About</a><a href="#work">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
 <div><h4>Contact</h4><a href="mailto:alvingideon380@gmail.com">alvingideon380@gmail.com</a><a href="tel:+2348119590880">08119590880</a><a href="https://wa.me/2348119590880" target="_blank" rel="noopener noreferrer">WhatsApp</a>Lagos State, Nigeria</div>
 </div><div class="cp">© 2026 Alvin Emmanuel Gideon. All rights reserved.</div></div></footer>
