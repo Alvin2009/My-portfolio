@@ -1,0 +1,25 @@
+:root{--bg:#F4F1E8;--bg2:#E8EFE5;--tx:#23352D;--mu:#455B50;--ac:#174D3A;--ac2:#246B52;--ln:#B7C9BC;--cu:#C38B55;--sf:'Newsreader',Georgia,'Times New Roman',serif;--ss:Manrope,system-ui,-apple-system,'Segoe UI',sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{background:#174D3A}
+body{margin:0;background:var(--bg);color:var(--tx);font:500 17px/1.75 var(--ss);-webkit-font-smoothing:antialiased}
+a{color:var(--ac2);text-decoration:underline;text-underline-offset:3px}a:hover{color:var(--ac)}
+:focus-visible{outline:2px solid var(--ac2);outline-offset:3px;border-radius:4px}
+.skip{position:fixed;left:16px;top:-80px;z-index:20;padding:12px 18px;border-radius:10px;background:#F4F1E8;color:#174D3A;font-weight:700;transition:top .2s}.skip:focus{top:12px}
+header.top{background:#174D3A;color:#F4F1E8;padding:18px 0}
+.wrap{width:min(780px,100% - 40px);margin:0 auto}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font:600 21px var(--sf);letter-spacing:.08em;color:#F4F1E8;text-decoration:none;white-space:nowrap}.logo em{color:#E0AA78;font-style:normal}
+header.top a.back{color:#D4E2D8;font-weight:600;font-size:15px}header.top a.back:hover{color:#F4F1E8}
+main{padding:56px 0 80px}
+h1{font:400 clamp(36px,6vw,52px)/1.1 var(--sf);margin:0 0 8px;letter-spacing:-.015em}
+.meta{color:var(--mu);font-weight:600;font-size:15px;margin:0 0 36px}
+h2{font:400 28px/1.2 var(--sf);margin:44px 0 12px}
+p,li{color:var(--mu)}p{margin:0 0 14px}ul{padding-left:22px;margin:0 0 14px}li{margin-bottom:6px}
+strong{color:var(--tx)}
+.note{padding:18px 22px;border:1px solid var(--ln);border-left:4px solid var(--cu);border-radius:12px;background:var(--bg2);margin:0 0 28px}.note p{margin:0}
+table{width:100%;border-collapse:collapse;margin:0 0 18px;font-size:15.5px}th,td{text-align:left;vertical-align:top;padding:10px 12px;border:1px solid var(--ln);color:var(--mu)}th{background:var(--bg2);color:var(--tx);font-weight:700}
+footer{background:#123B2D;color:#D4E2D8;padding:36px 0;font-size:15px;font-weight:500}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+footer a{color:#D4E2D8;text-decoration:none}footer a:hover{color:#F4F1E8;text-decoration:underline}
+footer nav{display:flex;gap:20px;flex-wrap:wrap}
+@media(max-width:600px){body{font-size:16px}main{padding:40px 0 60px}table,th,td{font-size:14.5px}th,td{padding:8px}}
