@@ -23,7 +23,7 @@
   // Where each nav target lands (progress), chosen inside each panel's fully-visible hold.
   var GO = { top: 0, about: 0.07, work: 0.41, services: 0.735, contact: 1 };
   var VIDEO_SOURCES = ['assets/scrub.mp4', 'assets/scrub.webm'];
-  var PRELOAD_MAX_MS = 4200;
+  var PRELOAD_MAX_MS = 3000;
 
   /* ---------- Elements ---------- */
   var panels = $$('.panel');
@@ -48,6 +48,9 @@
   var activeIdx = -1;
   var lastO = [], lastInert = [];
   var vReady = false, vDur = 0, vCur = 0, vLast = -1, vFailed = false;
+  var lastGap = -1;
+  var pm = { el: null, tx: 0, ty: 0, cx: 0, cy: 0 };   // pointer parallax on project previews
+  var finePointer = window.matchMedia ? window.matchMedia('(hover: hover) and (pointer: fine)').matches : false;
 
   /* ---------- Measure (layout reads live here only) ---------- */
   function measure() {
@@ -126,6 +129,10 @@
           el.style.transform = 'translate3d(0,' + ty.toFixed(1) + 'px,0)';
           inners[i].style.transform = 'translate3d(0,' + (-ty * 0.4).toFixed(1) + 'px,0)'; // counter-movement
           lastO[i] = o;
+          // Reveal state with hysteresis: switches on once the panel is clearly visible, off only when it has gone.
+          var isIn = el.classList.contains('in');
+          if (!isIn && o > 0.3) el.classList.add('in');
+          else if (isIn && o < 0.02) el.classList.remove('in');
           var inert = o < 0.5;
           if (inert !== lastInert[i]) {
             if (inert) el.setAttribute('inert', ''); else el.removeAttribute('inert');
@@ -135,10 +142,22 @@
       }
       if (strongest !== activeIdx && strongestO > 0.5) setActive(strongest);
 
+      // Stage "breathes": between panels the visual is revealed a little more
+      var gap = 1 - clamp(strongestO, 0, 1);
+      if (Math.abs(gap - lastGap) > 0.01) { stage.style.setProperty('--gap', gap.toFixed(2)); lastGap = gap; }
+
       // Fallback stage drift (only visible when no video)
       if (!vReady) {
         fbA.style.transform = 'translate3d(' + (-ps * 38).toFixed(2) + 'vw,0,0)';
         fbB.style.transform = 'translate3d(' + (ps * 46 - 8).toFixed(2) + 'vw,0,0)';
+      }
+
+      // Pointer parallax on project previews (fine pointers only; same loop, no extra rAF)
+      if (pm.el) {
+        pm.cx += (pm.tx - pm.cx) * 0.12; pm.cy += (pm.ty - pm.cy) * 0.12;
+        pm.el.style.setProperty('--px', pm.cx.toFixed(3)); pm.el.style.setProperty('--py', pm.cy.toFixed(3));
+        if (Math.abs(pm.tx - pm.cx) + Math.abs(pm.ty - pm.cy) > 0.004) more = true;
+        else if (pm.tx === 0 && pm.ty === 0) { pm.el.style.setProperty('--px', 0); pm.el.style.setProperty('--py', 0); pm.el = null; }
       }
 
       // Video scrub: ease playback time toward target
@@ -249,9 +268,11 @@
     if (preDone) return; preDone = true;
     pre.classList.add('done');
     ready = true;
+    root.classList.add('ready');
+    if (!rm && ps < 0.1 && panels[0]) panels[0].classList.add('in');
     introStart = performance.now();
     request();
-    setTimeout(function () { pre.setAttribute('hidden', ''); }, 900);
+    setTimeout(function () { pre.setAttribute('hidden', ''); }, 1000);
   }
   function preTick(now) {
     if (preDone) return;
@@ -274,6 +295,71 @@
     function onLoad() { milestones.load = 1; }
     if (doc.readyState === 'complete') onLoad(); else window.addEventListener('load', onLoad);
     requestAnimationFrame(preTick);
+  })();
+
+  /* ---------- Motion prep: word-mask headlines + staggered reveal targets ---------- */
+  function splitWords(h) {
+    h.setAttribute('aria-label', h.textContent.replace(/\s+/g, ' ').trim());
+    var n = 0;
+    (function walk(node) {
+      [].slice.call(node.childNodes).forEach(function (c) {
+        if (c.nodeType === 3) {
+          var frag = doc.createDocumentFragment();
+          c.nodeValue.split(/(\s+)/).forEach(function (t) {
+            if (!t) return;
+            if (/^\s+$/.test(t)) { frag.appendChild(doc.createTextNode(' ')); return; }
+            var w = doc.createElement('span'); w.className = 'w'; w.setAttribute('aria-hidden', 'true');
+            var i = doc.createElement('span'); i.className = 'wi'; i.style.setProperty('--wi', n++); i.textContent = t;
+            w.appendChild(i); frag.appendChild(w);
+          });
+          c.parentNode.replaceChild(frag, c);
+        } else if (c.nodeType === 1) walk(c);
+      });
+    })(h);
+  }
+  $$('.display').forEach(splitWords);
+  panels.forEach(function (p) {
+    var k = 0;
+    $$('.eyebrow,.lede,.actions,.ident,.plate,.more,.rows li,.meta3>div,.contact-list>div,.cue', p).forEach(function (el) {
+      el.setAttribute('data-r', ''); el.style.setProperty('--i', Math.min(k++, 9));
+    });
+  });
+
+  /* ---------- Project preview pointer response (desktop only) ---------- */
+  if (finePointer) {
+    $$('.plate-media').forEach(function (el) {
+      el.addEventListener('pointermove', function (e) {
+        if (rm) return;
+        var r = el.getBoundingClientRect();
+        pm.el = el; pm.tx = clamp((e.clientX - r.left) / r.width * 2 - 1, -1, 1); pm.ty = clamp((e.clientY - r.top) / r.height * 2 - 1, -1, 1);
+        request();
+      });
+      el.addEventListener('pointerleave', function () { pm.tx = 0; pm.ty = 0; request(); });
+    });
+  }
+
+  /* ---------- Copy email (real action with visible + announced confirmation) ---------- */
+  (function () {
+    var btn = $('#copy-email'), status = $('#copy-status'), t = 0;
+    if (!btn) return;
+    function done(ok) {
+      btn.classList.toggle('ok', ok);
+      btn.textContent = ok ? 'Copied ✓' : 'Copy failed';
+      if (status) status.textContent = ok ? 'Email address copied' : 'Could not copy; please copy it manually';
+      clearTimeout(t);
+      t = setTimeout(function () { btn.classList.remove('ok'); btn.textContent = 'Copy'; if (status) status.textContent = ''; }, 2000);
+    }
+    function fallback(text) {
+      var ta = doc.createElement('textarea'); ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed'; ta.style.opacity = '0'; doc.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = doc.execCommand('copy'); } catch (e) { ok = false; }
+      doc.body.removeChild(ta); done(ok);
+    }
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { fallback(text); });
+      else fallback(text);
+    });
   })();
 
   /* ---------- Events ---------- */

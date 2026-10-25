@@ -174,7 +174,7 @@ main{position:relative;z-index:5}
 
 /* ---------- Scrub mode ---------- */
 .track{display:none}
-html.scrub .track{display:block;position:relative;height:500vh;height:500svh}
+html.scrub .track{display:block;position:relative;height:460vh;height:460svh}
 html.scrub .anchor{position:absolute;left:0;top:0;width:1px;height:1px}
 html.scrub main{position:fixed;inset:0;pointer-events:none}
 html.scrub .panel{position:absolute;inset:0;min-height:0;opacity:0;visibility:hidden;will-change:opacity,transform}
@@ -310,4 +310,93 @@ html:not(.scrub){scroll-behavior:auto}
 @media (min-width:761px) and (max-width:900px){
   .plate.has-media{grid-template-columns:minmax(0,1fr)}
   .plate.has-media .plate-media{grid-column:1;grid-row:auto;aspect-ratio:21/8}
+}
+
+/* =====================================================================
+   Motion system
+   One easing curve; ~200ms for controls, ~700-900ms for reveals; small distances.
+   Reveal states only apply in scrub mode, so no-JS and reduced-motion pages are never hidden.
+   ===================================================================== */
+:root{--ease:cubic-bezier(.2,.7,.2,1)}
+
+/* Page entrance: header settles in, loader lifts away like a curtain */
+.site-head{transition:opacity .8s var(--ease) .15s,transform .8s var(--ease) .15s}
+html.js:not(.ready):not(.rm) .site-head{opacity:0;transform:translateY(-14px)}
+.preloader{transition:transform .85s var(--ease),opacity .85s ease,visibility 0s linear .85s}
+.preloader.done{transform:translateY(-100%);opacity:0}
+
+/* Staggered reveal of panel content (class .in is set by js/site.js with hysteresis) */
+.w{display:inline-block;overflow:hidden;vertical-align:top;padding:.05em .05em .16em;margin:-.05em -.05em -.16em}
+.wi{display:inline-block}
+html.scrub .panel:not(.in) .wi{transform:translateY(112%)}
+html.scrub .panel.in .wi{transform:none;transition:transform .9s var(--ease) calc(90ms + var(--wi,0) * 55ms)}
+html.scrub .panel:not(.in) [data-r]{opacity:0;transform:translateY(16px)}
+html.scrub .panel.in [data-r]{opacity:1;transform:none;
+  transition:opacity .7s var(--ease) calc(300ms + var(--i,0) * 70ms),transform .8s var(--ease) calc(300ms + var(--i,0) * 70ms)}
+html.scrub .panel.in .eyebrow[data-r]{transition-delay:0ms}
+html.scrub .panel:not(.in) .plate-media{clip-path:inset(0 0 100% 0)}
+html.scrub .panel.in .plate-media{clip-path:inset(0);transition:clip-path 1s var(--ease) .6s}
+
+/* Navigation: underline draws in on hover/focus, stays for the active section */
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:9px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s var(--ease)}
+.nav a:hover::after,.nav a:focus-visible::after,.nav a[aria-current]::after{transform:scaleX(1)}
+
+/* Buttons: arrow nudge, colour fade, press */
+.btn{transition:background .2s,color .2s,border-color .2s,transform .15s var(--ease)}
+.btn:active,.menu-btn:active{transform:translateY(1px) scale(.985)}
+.btn span[aria-hidden]{display:inline-block;transition:transform .25s var(--ease)}
+.btn:hover span[aria-hidden],.btn:focus-visible span[aria-hidden]{transform:translateX(3px)}
+.btn:hover .ne[aria-hidden],.btn:focus-visible .ne[aria-hidden]{transform:translate(2px,-2px)}
+.menu-btn{transition:border-color .2s,transform .15s var(--ease)}
+.menu-btn:hover{border-color:var(--accent)}
+
+/* Project plates: border lights up, preview zooms and answers the pointer, caption reveals */
+.plate{transition:border-color .3s}
+.plate:hover,.plate:focus-within{border-top-color:var(--accent)}
+.plate-media{--px:0;--py:0}
+.plate-media img{transform:scale(1.03) translate3d(calc(var(--px) * -6px),calc(var(--py) * -4px),0);transition:filter .35s,transform .9s var(--ease)}
+.plate:hover .plate-media img,.plate:focus-within .plate-media img{transform:scale(1.08) translate3d(calc(var(--px) * -8px),calc(var(--py) * -5px),0)}
+.ph-mark{transition:transform .6s var(--ease);transform:translate3d(calc(var(--px) * 6px),calc(var(--py) * 4px),0)}
+.plate:hover .ph-mark,.plate:focus-within .ph-mark{transform:translate3d(calc(var(--px) * 8px),calc(var(--py) * 5px - 3px),0)}
+.plate-media.has-img .ph-dom{display:block;left:0;right:0;top:auto;bottom:0;padding:22px 10px 8px;color:var(--ink);background:linear-gradient(0deg,rgba(16,17,15,.88),rgba(16,17,15,0));opacity:0;transform:translateY(6px);transition:opacity .3s,transform .3s var(--ease)}
+.plate:hover .plate-media.has-img .ph-dom,.plate:focus-within .plate-media.has-img .ph-dom{opacity:1;transform:none}
+@media (hover:none){
+  .ph-go{opacity:1;transform:none}
+  .plate-media.has-img .ph-dom{opacity:1;transform:none}
+}
+
+/* Stage breathes between panels: text recedes, the visual comes forward */
+.stage{--gap:0}
+.fb-a{-webkit-text-stroke-color:rgba(242,240,236,calc(.12 + var(--gap) * .18))}
+.shade{opacity:calc(1 - var(--gap) * .4)}
+
+/* Scroll cue (first panel, roomy screens only; plays three times, then rests) */
+.cue{display:none}
+@media (min-width:761px) and (min-height:561px){
+  html.scrub .p1 .panel-inner{position:relative}
+  html.scrub .p1 .cue{display:flex;position:absolute;right:calc(var(--gutter) + var(--sr));top:calc(var(--head-h) + 3vh);align-items:center;gap:10px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+  .cue i{display:block;position:relative;overflow:hidden;width:44px;height:1px;background:var(--line)}
+  .cue i::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-100%);animation:cue 1.8s var(--ease) 1.6s 3}
+}
+@keyframes cue{to{transform:translateX(100%)}}
+
+/* Copy-email control */
+.dd-flex{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.copy-btn{position:relative;font:inherit;font-size:12px;line-height:1.5;color:var(--ink2);background:none;border:1px solid var(--line);padding:1px 9px;cursor:pointer;transition:color .2s,border-color .2s,background .2s,transform .15s var(--ease)}
+.copy-btn::after{content:"";position:absolute;inset:-9px -5px}
+.copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.copy-btn:active{transform:scale(.97)}
+.copy-btn.ok{color:var(--bg);background:var(--accent);border-color:var(--accent)}
+@media (max-height:430px){.copy-btn{display:none}}
+
+/* Footer links */
+.f-legal a{transition:color .2s}
+
+/* Reduced motion: no movement, no staggers, no parallax */
+html.rm *,html.rm *::before,html.rm *::after{animation:none!important}
+html.rm .btn span[aria-hidden],html.rm .plate-media img,html.rm .ph-mark{transform:none!important;transition:none!important}
+html.rm .site-head{transition:none}
+html.rm .preloader.done{transform:none}
+@media (prefers-reduced-motion:reduce){
+  .nav a::after,.plate,.copy-btn,.btn,.site-head,.preloader{transition-duration:.01ms!important}
 }

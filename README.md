@@ -34,3 +34,14 @@ Market Square: once you confirm exactly what you delivered, add a `My role` row 
 ## Tuning the pacing
 `CUES` in `js/site.js` sets when each panel fades in/out (progress 0 to 1); `.track` height in `css/style.css`
 (currently 500vh) sets how long the scroll is.
+
+## Motion system
+All motion lives in the existing `js/site.js` frame loop and `css/style.css`; no libraries, no extra animation loops.
+- **Entrance:** loader lifts away (capped at 3 s, independent of fonts/video), header settles in, headline words rise through a mask, then eyebrow, text and CTAs follow in sequence.
+- **Panel reveals:** each panel gets class `.in` when it is clearly visible and loses it only once fully gone (hysteresis), so small scroll wiggles never replay animations. Content reveals use `data-r` + `--i` (stagger index) and `.wi` + `--wi` (word index), set automatically.
+- **Controls:** nav underline draws on hover/focus and marks the active section; buttons nudge their arrow and compress slightly when pressed.
+- **Projects:** preview zooms on hover and answers the pointer slightly (fine pointers only). On touch devices the "Visit" tag and caption are always visible, so nothing depends on hover.
+- **Stage:** between panels the visual comes forward (`--gap`), so the scroll feels like chapters.
+- **Copy email:** a real action with visible and screen-reader confirmation.
+- **Reduced motion / no JavaScript:** everything shows immediately as a normal stacked page; no stagger, parallax, loops or smooth scrolling.
+Tune pacing with `CUES` in `js/site.js`, the `.track` height (460vh) and the delays in the "Motion system" block of the CSS.
