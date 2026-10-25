@@ -3,197 +3,183 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Alvin Emmanuel Gideon | Website Designer & Developer</title>
+<title>Alvin Emmanuel Gideon | Website Designer &amp; Developer</title>
 <meta name="description" content="Alvin Emmanuel Gideon is a website designer and developer, digital creative, virtual assistant, and social media manager based in Lagos, Nigeria.">
-<meta property="og:title" content="Alvin Emmanuel Gideon | Website Designer & Developer">
+<link rel="canonical" href="https://alvingideontech.netlify.app/">
+<meta property="og:title" content="Alvin Emmanuel Gideon | Website Designer &amp; Developer">
 <meta property="og:description" content="Website designer and developer, digital creative, virtual assistant, and social media manager based in Lagos, Nigeria.">
 <meta property="og:type" content="website">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#F5F1E8">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2320211E'/%3E%3Ctext x='32' y='43' font-size='30' font-family='Georgia,serif' text-anchor='middle' fill='%23F5F1E8'%3EAG%3C/text%3E%3C/svg%3E">
+<meta property="og:url" content="https://alvingideontech.netlify.app/">
+<meta name="twitter:card" content="summary">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#10110F">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2310110F'/%3E%3Ctext x='32' y='42' font-size='28' font-family='Arial,sans-serif' font-weight='500' text-anchor='middle' fill='%23C5F467'%3EAG%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<!-- Non-blocking font load: media=print never blocks scripts/render; js/site.js flips it to "all". -->
+<link id="gf" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" media="print">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="css/style.css">
-<script src="js/site.js"></script>
+<noscript><style>.preloader{display:none!important}</style></noscript>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-head">
-<div class="wrap">
-<a class="mark" href="#top" aria-label="Alvin Emmanuel Gideon, back to top">Alvin Emmanuel Gideon</a>
-<button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
-<nav class="nav" id="nav" aria-label="Main">
-<a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact" class="cta">Contact</a>
-</nav>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+
+<div class="preloader" id="preloader" role="status" aria-live="polite">
+  <span class="pre-name">Alvin Emmanuel Gideon</span>
+  <div class="pre-foot">
+    <span class="pre-pct"><b id="pre-pct">0</b>%</span>
+    <span class="pre-line"><i id="pre-bar"></i></span>
+    <span class="pre-label">Loading portfolio</span>
+  </div>
 </div>
+
+<!-- Fixed visual stage: video (optional) + typographic fallback + shade + grain -->
+<div class="stage" id="stage" aria-hidden="true">
+  <!-- Optional scrub video. Add assets/scrub.mp4 and/or assets/scrub.webm (see README). Missing file = fallback below stays. -->
+  <video id="stage-video" muted playsinline preload="auto" tabindex="-1" disablepictureinpicture disableremoteplayback></video>
+  <div class="fb" id="fb">
+    <span class="fb-word fb-a" id="fb-a">Gideon</span>
+    <span class="fb-word fb-b" id="fb-b">Alvin</span>
+  </div>
+  <div class="shade"></div>
+  <div class="grain"></div>
+</div>
+
+<header class="site-head" id="top">
+  <a class="mark" href="#top" data-go="top" aria-label="Alvin Emmanuel Gideon, back to top"><span class="mark-full">Alvin Emmanuel Gideon</span><span class="mark-short">Alvin Gideon</span></a>
+  <span class="chap" id="chap" aria-hidden="true"><b>01</b> / 04</span>
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#work" data-go="work">Work</a>
+    <a href="#about" data-go="about">About</a>
+    <a href="#services" data-go="services">Services</a>
+    <a href="#contact" data-go="contact" class="nav-contact">Contact</a>
+  </nav>
+  <a class="btn btn-head" href="#contact" data-go="contact">Contact</a>
+  <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
 </header>
 
 <main id="main">
 
-<section class="hero" id="top">
-<div class="wrap">
-<h1>I design and build <em>modern</em> websites.</h1>
-<div class="hero-grid">
-<div class="hero-meta">
-<span class="status">Available for opportunities</span>
-<span><strong>Alvin Emmanuel Gideon</strong></span>
-<span>Website Designer &amp; Developer, Digital Creative, Virtual Assistant, Social Media Manager</span>
-<span>Lagos State, Nigeria</span>
-</div>
-<div class="intro">
-<p>Custom, responsive websites built around your brand, goals, and audience, with the digital support to keep your online presence running smoothly.</p>
-<div class="actions"><a class="btn primary" href="#work">View my work</a><a class="btn ghost" href="#contact">Contact me</a></div>
-</div>
-</div>
-</div>
-</section>
+  <!-- PANEL 1 — INTRODUCTION -->
+  <section class="panel p1" id="about" aria-labelledby="h-intro">
+    <div class="panel-inner">
+      <p class="eyebrow"><span class="dot"></span>WEB DEVELOPMENT · DIGITAL CREATIVITY · PROFESSIONAL SUPPORT</p>
+      <h1 class="display" id="h-intro"><span class="ln">Digital work,</span> <span class="ln ind">thoughtfully done.</span></h1>
+      <div class="foot-grid">
+        <div class="ident">
+          <p class="status"><span class="dot"></span>Available for opportunities</p>
+          <p class="who">Alvin Emmanuel Gideon</p>
+          <p class="roles">Website designer &amp; developer, digital creative, virtual assistant, social media manager</p>
+          <p class="where">Lagos State, Nigeria</p>
+        </div>
+        <div class="copy">
+          <p class="lede">I bring together web development, digital creativity, social media, and administrative support to help businesses and professionals work and present themselves better.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#work" data-go="work">Explore my work <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#contact" data-go="contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section id="work" aria-labelledby="work-h">
-<div class="wrap">
-<div class="sec-head"><span class="label">01</span><h2 id="work-h">Selected work</h2></div>
-<div class="work-grid">
-<!-- To use a real screenshot, add images/estora-suites.jpg and put <img src="images/estora-suites.jpg" alt="Screenshot of the ESTORA Suites website" loading="lazy"> as the first child of the link below. -->
-<a class="plate rv" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the ESTORA Suites live site (opens in a new tab)">
-<span class="top"><span>Personal project</span><span>Real estate website</span></span>
-<span class="name">Estora <i>Suites</i></span>
-<span class="bot"><span>estorasuites.netlify.app</span><span class="go">Visit live site ↗</span></span>
-</a>
-<div class="work-info rv">
-<h3>ESTORA Suites</h3>
-<p>A luxury real estate website concept that presents a residential space through an immersive, cinematic digital experience. The project explores elegant visual storytelling, modern layouts, atmospheric imagery, and refined interactions to create a premium property presentation.</p>
-<p>It is a fictional personal concept, not a real listing or client work.</p>
-<dl class="facts">
-<div><dt>Type</dt><dd>Personal project, real estate website</dd></div>
-<div><dt>My role</dt><dd>Design and build</dd></div>
-<div><dt>Link</dt><dd><a class="link" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer">estorasuites.netlify.app</a></dd></div>
-</dl>
-</div>
-<div class="work-note rv">
-<p>10+ websites designed and built for Instagram-based businesses and brands.</p>
-<p>I design and build websites for small businesses and brands. More case studies are on the way, and I'm happy to share examples on request. <a class="link" href="#contact">Ask for examples</a>.</p>
-</div>
-</div>
-</div>
-</section>
+  <!-- PANEL 2 — SELECTED WORK -->
+  <section class="panel p2" id="work" aria-labelledby="h-work">
+    <div class="panel-inner">
+      <div class="col-l">
+        <p class="eyebrow"><span class="dot"></span>SELECTED PROJECTS</p>
+        <h2 class="display md" id="h-work">A closer look at what I do.</h2>
+        <p class="lede hide-compact">Explore selected work, digital projects, and practical solutions across my areas of experience.</p>
+        <div class="actions"><a class="btn btn-primary" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer">View projects <span aria-hidden="true">↗</span><span class="sr"> (ESTORA Suites, opens in a new tab)</span></a></div>
+      </div>
+      <div class="col-r">
+        <!--
+          To add more projects later: duplicate the <article class="plate"> block below with real details only.
+          To show a real screenshot of ESTORA Suites, save it as assets/estora-suites.jpg; it appears automatically.
+        -->
+        <article class="plate">
+          <div class="plate-top"><span class="num">01</span><span>Personal concept · not client work</span></div>
+          <a class="plate-name" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="ESTORA Suites, open the live site (opens in a new tab)">Estora <br class="br-md">Suites <span class="arr" aria-hidden="true">↗</span></a>
+          <figure class="plate-media" id="plate-media" hidden><img id="plate-img" alt="Screenshot of the ESTORA Suites website" width="1280" height="800" decoding="async"></figure>
+          <p class="plate-desc hide-sm">A luxury real estate website concept that presents a residential space through an immersive, cinematic digital experience, exploring visual storytelling, modern layouts, atmospheric imagery and refined interactions.</p>
+          <dl class="facts">
+            <div><dt>Type</dt><dd>Real estate website (fictional concept)</dd></div>
+            <div><dt>My role</dt><dd>Design and build</dd></div>
+            <div><dt>Live</dt><dd><a class="link" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer">estorasuites.netlify.app</a></dd></div>
+          </dl>
+        </article>
+        <p class="more hide-compact"><b>10+ websites</b> designed and built for Instagram-based businesses and brands. More case studies are on the way; examples are available on request. <a class="link" href="#contact" data-go="contact">Ask for examples</a></p>
+      </div>
+    </div>
+  </section>
 
-<section class="services" id="services" aria-labelledby="services-h">
-<div class="wrap">
-<div class="sec-head"><span class="label">02</span><h2 id="services-h">Services</h2></div>
-<div class="split">
-<div class="lead rv"><p class="label">What I can help with</p><p>Six areas of work, from a full website build to the everyday admin that keeps an online business organised.</p></div>
-<ol class="rows">
-<li class="rv"><span class="n num">01</span><h3>Website Design &amp; Development</h3><p>Responsive websites for small businesses and Instagram-based brands, built around your brand, goals, and audience on platforms including WordPress, Wix, and GoDaddy.</p></li>
-<li class="rv"><span class="n num">02</span><h3>Graphic Design</h3><p>Clean digital graphics and visual communication using tools such as Canva.</p></li>
-<li class="rv"><span class="n num">03</span><h3>Virtual Assistance</h3><p>Administrative support, organization, online research, data entry, scheduling, and digital organization.</p></li>
-<li class="rv"><span class="n num">04</span><h3>Social Media Management</h3><p>Content support, social media organization, digital presence management, and Facebook advertising.</p></li>
-<li class="rv"><span class="n num">05</span><h3>Digital Marketing</h3><p>Social media marketing, Facebook Ads, and digital campaign support.</p></li>
-<li class="rv"><span class="n num">06</span><h3>Data &amp; Administrative Support</h3><p>Data entry, Google Workspace, spreadsheets, documentation, and organized digital workflows.</p></li>
-</ol>
-</div>
-</div>
-</section>
+  <!-- PANEL 3 — SERVICES AND EXPERIENCE -->
+  <section class="panel p3" id="services" aria-labelledby="h-services">
+    <div class="panel-inner">
+      <div class="col-l">
+        <p class="eyebrow"><span class="dot"></span>WHAT I BRING TO THE TABLE</p>
+        <h2 class="display md" id="h-services">Creative thinking. Practical execution.</h2>
+        <p class="lede">From building web experiences to managing digital communication and administrative tasks, I combine creativity with organised, dependable execution.</p>
+      </div>
+      <div class="col-r">
+        <ol class="rows">
+          <li><span class="num">01</span><h3>Website development &amp; design</h3><p class="hide-sm">Responsive sites for small businesses and Instagram-based brands on WordPress, Wix and GoDaddy.</p></li>
+          <li><span class="num">02</span><h3>Social media management</h3><p class="hide-sm">Content support, account organisation, digital presence and Facebook Ads.</p></li>
+          <li><span class="num">03</span><h3>Virtual assistance</h3><p class="hide-sm">Online research, scheduling, data entry and digital organisation.</p></li>
+          <li><span class="num">04</span><h3>Administrative support</h3><p class="hide-sm">Documentation, spreadsheets and organised workflows in Google Workspace.</p></li>
+          <li><span class="num">05</span><h3>Digital content &amp; creative support</h3><p class="hide-sm">Social graphics and visual materials created in Canva.</p></li>
+        </ol>
+        <div class="meta3">
+          <div><h4>Experience</h4><p><b>Social Media Manager</b>, AVM Studios<br><span class="mute">May 2025 – March 2026</span></p></div>
+          <div><h4>Tools</h4><p>Canva, Google Workspace, Microsoft PowerPoint, WordPress, Wix, GoDaddy, Facebook Ads</p></div>
+          <div class="hide-sm"><h4>Certified &amp; educated</h4><p>Digital and Social Media Marketing (Atingi Digital) · Facebook Ads Manager (Great Learning) · B.Sc. Computer Science, NOUN</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="about" id="about" aria-labelledby="about-h">
-<div class="wrap">
-<div class="sec-head" style="border-top-color:var(--ink)"><span class="label" style="color:#3A3B36">03</span><h2 id="about-h">About</h2></div>
-<div class="split">
-<div class="lead rv"><p class="lede">Website designer and developer, digital creative, virtual assistant, and social media manager.</p></div>
-<div class="about-body rv">
-<p>I design and build modern, responsive websites for small businesses and brands, alongside work in social media management, graphic design, and digital marketing.</p>
-<p>I use Google Workspace and other digital tools to organize information, manage tasks, create documents, and handle data.</p>
-<p>I enjoy learning new software, I work well independently, and I'm comfortable working remotely.</p>
-<p class="tools"><strong>Proficient in</strong> Google Sheets, Docs, Calendar, Meet and Workspace, and Microsoft PowerPoint.</p>
-</div>
-</div>
-<div class="skills rv">
-<div><h3>Digital</h3><p>Website design, website development, WordPress, Wix, GoDaddy, social media management, Canva, graphic design, digital marketing, Facebook Ads.</p></div>
-<div><h3>Administrative &amp; data</h3><p>Virtual assistance, data entry, administrative support, digital organization, online research, data organization, document management, digital file organization.</p></div>
-<div><h3>Working style</h3><p>Written and verbal communication, time management, attention to detail, organization, problem solving, fast learning, independent work, remote collaboration. English (fluent).</p></div>
-</div>
-</div>
-</section>
+  <!-- PANEL 4 — CONTACT -->
+  <section class="panel p4" id="contact" aria-labelledby="h-contact">
+    <div class="panel-inner">
+      <p class="eyebrow"><span class="dot"></span>HAVE SOMETHING IN MIND?</p>
+      <h2 class="display" id="h-contact">Let's make something useful.</h2>
+      <div class="foot-grid">
+        <div class="copy">
+          <p class="lede">Have a project, a role, or a task that needs the right person? Get in touch and let's discuss it.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="mailto:alvingideon380@gmail.com?subject=Hello%20Alvin">Start a conversation <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="https://wa.me/2348119590880?text=Hello%20Alvin" target="_blank" rel="noopener noreferrer">WhatsApp<span class="sr"> (opens in a new tab)</span></a>
+          </div>
+        </div>
+        <dl class="contact-list">
+          <div><dt>Email</dt><dd><a class="link" href="mailto:alvingideon380@gmail.com">alvingideon380@gmail.com</a></dd></div>
+          <div><dt>Phone</dt><dd><a class="link" href="tel:+2348119590880">08119590880</a></dd></div>
+          <div><dt>Location</dt><dd>Lagos State, Nigeria</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
 
-<section class="process" aria-labelledby="process-h">
-<div class="wrap">
-<div class="sec-head"><span class="label">04</span><h2 id="process-h">How I work</h2></div>
-<ol>
-<li class="rv"><span class="n num">01</span><h3>Understand</h3><p>Understand the goal, audience, and requirements.</p></li>
-<li class="rv"><span class="n num">02</span><h3>Organize</h3><p>Structure the information, content, and workflow.</p></li>
-<li class="rv"><span class="n num">03</span><h3>Create</h3><p>Design and build the digital experience.</p></li>
-<li class="rv"><span class="n num">04</span><h3>Refine</h3><p>Review, improve, and polish the final result.</p></li>
-</ol>
-</div>
-</section>
-
-<section class="experience" id="experience" aria-labelledby="exp-h">
-<div class="wrap">
-<div class="sec-head" style="border-top:0;padding-top:0"><span class="label">05</span><h2 id="exp-h">Experience</h2></div>
-<div class="job rv">
-<div class="when">May 2025 – March 2026</div>
-<div class="what">
-<h3>Social Media Manager</h3>
-<p class="org">AVM STUDIOS</p>
-<ul>
-<li>Managed the academy's Instagram account and supported its day-to-day online activities.</li>
-<li>Prepared and organized content for social media.</li>
-<li>Created graphics and visual materials using Canva.</li>
-<li>Assisted with audience engagement and communication.</li>
-<li>Helped maintain the account's visual consistency.</li>
-<li>Worked with digital tools to organize and manage social media tasks.</li>
-</ul>
-</div>
-</div>
-<div class="pairs rv">
-<span class="label">Additional experience</span>
-<ul>
-<li><b>Digital Promotion</b><span>Experience promoting digital content and services and communicating with people online.</span></li>
-<li><b>Graphic Design</b><span>Experience creating social media graphics and other visual materials using Canva.</span></li>
-<li><b>Website Design &amp; Development</b><span>Practical experience designing and building websites for small businesses and brands on platforms including WordPress, Wix, and GoDaddy.</span></li>
-</ul>
-</div>
-<div class="pairs rv">
-<span class="label">Certifications</span>
-<ul>
-<li><b>Digital and Social Media Marketing</b><span>Atingi Digital</span></li>
-<li><b>Facebook Ads Manager</b><span>Great Learning</span></li>
-</ul>
-</div>
-<div class="pairs rv">
-<span class="label">Education</span>
-<ul><li><b>B.Sc. Computer Science</b><span>National Open University of Nigeria (NOUN)</span></li></ul>
-</div>
-</div>
-</section>
-
-<section class="contact dark" id="contact" aria-labelledby="contact-h">
-<div class="wrap">
-<div class="sec-head" style="border-top-color:rgba(245,241,232,.4)"><span class="label">06</span><span class="label" style="color:#B9B6AB">Contact</span></div>
-<h2 id="contact-h">Let's create something <em>meaningful.</em></h2>
-<div class="contact-grid">
-<div class="ask">
-<p>Whether you need a website, digital support, social media assistance, or help managing online tasks, I'd love to hear about your project.</p>
-<a class="big-mail" href="mailto:alvingideon380@gmail.com">alvingideon380@gmail.com</a>
-<div class="actions"><a class="btn primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alvingideon380@gmail.com&amp;su=Hello%20Alvin" target="_blank" rel="noopener noreferrer">Email me</a></div>
-</div>
-<dl>
-<div><dt>Email</dt><dd><a href="mailto:alvingideon380@gmail.com">alvingideon380@gmail.com</a></dd></div>
-<div><dt>Phone</dt><dd><a href="tel:+2348119590880">08119590880</a></dd></div>
-<div><dt>WhatsApp</dt><dd><a href="https://wa.me/2348119590880?text=Hello%20Alvin" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></dd></div>
-<div><dt>Location</dt><dd>Lagos State, Nigeria</dd></div>
-</dl>
-</div>
-</div>
-</section>
 </main>
 
-<footer class="site-foot dark">
-<div class="wrap">
-<span>© 2026 Alvin Emmanuel Gideon · Design studio name: Codex Designs</span>
-<nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="cookies.html">Cookie Policy</a><a href="terms.html">Terms of Use</a></nav>
+<!-- Scroll track: provides document height. Anchors are positioned over it by JS. -->
+<div class="track" id="track" aria-hidden="true">
+  <span class="anchor" data-for="about"></span>
+  <span class="anchor" data-for="work"></span>
+  <span class="anchor" data-for="services"></span>
+  <span class="anchor" data-for="contact"></span>
 </div>
+
+<footer class="site-foot" id="foot">
+  <span class="f-copy">© <span id="year">2026</span> <span class="f-full">Alvin Emmanuel Gideon · Codex Designs</span><span class="f-short">Alvin Gideon</span></span>
+  <span class="f-desc">Website designer &amp; developer · Lagos State, Nigeria</span>
+  <nav class="f-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></nav>
 </footer>
+
+<script src="js/site.js"></script>
 </body>
 </html>
