@@ -23,10 +23,13 @@ Nothing is faked: until these exist, the stage shows a typographic fallback and 
    ffmpeg -i recording.mov -an -vf "scale=1280:-2,fps=24" -c:v libvpx-vp9 -g 1 -crf 34 -b:v 0 assets/scrub.webm
    ```
    Aim for 8–20 seconds and under ~8 MB. Longer or larger files scrub less smoothly on phones.
-2. **Project screenshot** `assets/estora-suites.jpg` (about 1280x800). It appears automatically in the Work panel.
+2. **Project previews** (about 1280x800, under ~250 KB, JPG). Each appears automatically in its Work-panel entry:
+   - `assets/market-square.jpg`: screenshot of https://www.marketsquareexp.com/ (a clean placeholder shows until it exists)
+   - `assets/estora-suites.jpg`: screenshot of ESTORA Suites (hidden until it exists)
 
 ## Adding projects
-Duplicate the `<article class="plate">` block in the Work panel (`#work`) and fill in real details only.
+Duplicate an `<article class="plate">` block in the Work panel (`#work`) and fill in real details only.
+Market Square: once you confirm exactly what you delivered, add a `My role` row where the HTML comment in `#plate-ms` says so.
 
 ## Tuning the pacing
 `CUES` in `js/site.js` sets when each panel fades in/out (progress 0 to 1); `.track` height in `css/style.css`

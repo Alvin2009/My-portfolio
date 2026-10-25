@@ -230,13 +230,15 @@
     load();
   }
 
-  /* ---------- Optional project screenshot ---------- */
-  (function () {
-    var img = $('#plate-img'), fig = $('#plate-media');
-    if (!img || !fig) return;
-    img.addEventListener('load', function () { fig.hidden = false; });
-    img.src = 'assets/estora-suites.jpg';
-  })();
+  /* ---------- Optional project previews (assets/*.jpg); pages work without them ---------- */
+  $$('img[data-src]').forEach(function (img) {
+    img.addEventListener('load', function () {
+      img.hidden = false;
+      var a = img.parentNode; a.hidden = false; a.classList.add('has-img');
+      if (a.parentNode) a.parentNode.classList.add('has-media');
+    });
+    img.src = img.getAttribute('data-src');
+  });
 
   /* ---------- Preloader (real milestones + hard cap) ---------- */
   var pre = $('#preloader'), preBar = $('#pre-bar'), prePct = $('#pre-pct');
