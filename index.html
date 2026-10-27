@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>Alvin Emmanuel Gideon | Website Designer &amp; Developer</title>
-<meta name="description" content="Alvin Emmanuel Gideon is a website designer and developer, digital creative, virtual assistant, and social media manager based in Lagos, Nigeria.">
+<title>Alvin Emmanuel Gideon | Web Developer</title>
+<meta name="description" content="Alvin Emmanuel Gideon is a web developer based in Lagos State, Nigeria, with graphic design, social media management and digital support experience. View projects and download his CV.">
 <link rel="canonical" href="https://alvingideontech.netlify.app/">
-<meta property="og:title" content="Alvin Emmanuel Gideon | Website Designer &amp; Developer">
-<meta property="og:description" content="Website designer and developer, digital creative, virtual assistant, and social media manager based in Lagos, Nigeria.">
+<meta property="og:title" content="Alvin Emmanuel Gideon | Web Developer">
+<meta property="og:description" content="Web developer based in Lagos State, Nigeria, with graphic design, social media management and digital support experience.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alvingideontech.netlify.app/">
 <meta name="twitter:card" content="summary">
@@ -74,14 +74,14 @@
         <div class="ident">
           <p class="status"><span class="dot"></span>Available for opportunities</p>
           <p class="who">Alvin Emmanuel Gideon</p>
-          <p class="roles">Website designer &amp; developer, digital creative, virtual assistant, social media manager</p>
+          <p class="roles"><b>Web Developer</b> with graphic design, social media and digital support experience</p>
           <p class="where">Lagos State, Nigeria</p>
         </div>
         <div class="copy">
           <p class="lede">I bring together web development, digital creativity, social media, and administrative support to help businesses and professionals work and present themselves better.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#work" data-go="work">Explore my work <span aria-hidden="true">→</span></a>
-            <a class="btn btn-ghost" href="#contact" data-go="contact">Get in touch</a>
+            <a class="btn btn-ghost" href="assets/Alvin-Emmanuel-Gideon-CV.pdf" download="Alvin-Emmanuel-Gideon-CV.pdf" type="application/pdf">Download CV <span aria-hidden="true" class="dn">↓</span><span class="sr"> (PDF)</span></a>
           </div>
         </div>
       </div>
@@ -95,73 +95,120 @@
         <p class="eyebrow"><span class="dot"></span>SELECTED PROJECTS</p>
         <h2 class="display md" id="h-work">A closer look at what I do.</h2>
         <p class="lede hide-compact">Explore selected work, digital projects, and practical solutions across my areas of experience.</p>
-        <div class="actions"><a class="btn btn-primary" href="https://www.marketsquareexp.com/" target="_blank" rel="noopener noreferrer">View projects <span aria-hidden="true" class="ne">↗</span><span class="sr"> (Market Square live website, opens in a new tab)</span></a></div>
+        <div class="actions"><a class="btn btn-primary" href="https://www.marketsquareexp.com/" data-open="ms" aria-haspopup="dialog">View projects <span aria-hidden="true">→</span></a></div>
       </div>
       <div class="col-r">
         <!--
-          To add a project: duplicate an <article class="plate"> block below with real details only.
-          PREVIEW IMAGES (optional, picked up automatically; keep ~1280x800, under ~250 KB):
-            assets/market-square.jpg  -> Market Square preview (a clean placeholder shows until it exists)
-            assets/estora-suites.jpg  -> ESTORA Suites preview (hidden until it exists)
+          ADDING / EDITING PROJECTS (real details only):
+          1. Add a <figure class="pv"> in .pj-view, an <li> in .pj-list, and a <template id="t-KEY"> below the footer.
+          2. Preview images (optional, picked up automatically; ~1280x800 JPG under ~250 KB):
+               assets/market-square.jpg  - screenshot of marketsquareexp.com (clean placeholder shows until it exists)
+               assets/estora-suites.jpg  - screenshot of estorasuites.netlify.app (placeholder until it exists)
+               assets/portfolio.jpg      - screenshot of this site
+          3. Market Square: add your confirmed contribution and tools in <template id="t-ms">.
         -->
-        <article class="plate has-media" id="plate-ms">
-          <div class="plate-top"><span class="num">01</span><span>Client project · Website</span></div>
-          <div class="plate-main">
-            <a class="plate-name" href="https://www.marketsquareexp.com/" target="_blank" rel="noopener noreferrer" aria-label="Market Square, visit the live website (opens in a new tab)">Market Square <span class="arr" aria-hidden="true">↗</span></a>
-            <p class="plate-desc hide-sm">A completed client project for MarketSquare Experiential Limited, shown here with its live website. Details of my specific role are available on request.</p>
-            <dl class="facts">
-              <div><dt>Client</dt><dd>MarketSquare Experiential Limited</dd></div>
-              <!-- Add <div><dt>My role</dt><dd>…</dd></div> here once you confirm exactly what you delivered. -->
-              <div><dt>Live</dt><dd><a class="link" href="https://www.marketsquareexp.com/" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true" class="ne">↗</span><span class="sr"> (opens in a new tab)</span></a></dd></div>
-            </dl>
+        <div class="pj">
+          <div class="pj-view" aria-hidden="true">
+            <figure class="pv on" data-pj="ms">
+              <img data-src="assets/market-square.jpg" alt="Screenshot of the Market Square website" width="1280" height="800" decoding="async" hidden>
+              <span class="tag tag-client">Client project</span>
+              <span class="ph-dom">marketsquareexp.com</span>
+              <span class="ph-mark">Market<br>Square</span>
+            </figure>
+            <figure class="pv" data-pj="es">
+              <img data-src="assets/estora-suites.jpg" alt="Screenshot of the ESTORA Suites website" width="1280" height="800" decoding="async" hidden>
+              <span class="tag">Personal project</span>
+              <span class="ph-dom">estorasuites.netlify.app</span>
+              <span class="ph-mark">Estora<br>Suites</span>
+            </figure>
+            <figure class="pv" data-pj="pf">
+              <img data-src="assets/portfolio.jpg" alt="Screenshot of this portfolio website" width="1280" height="800" decoding="async" hidden>
+              <span class="tag">Personal project</span>
+              <span class="ph-dom">alvingideontech.netlify.app</span>
+              <span class="ph-mark">Alvin<br>Gideon</span>
+            </figure>
           </div>
-          <a class="plate-media ph" href="https://www.marketsquareexp.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
-            <img data-src="assets/market-square.jpg" alt="" width="1280" height="800" decoding="async" hidden>
-            <span class="ph-dom">marketsquareexp.com</span>
-            <span class="ph-go">Visit ↗</span>
-            <span class="ph-mark">Market<br>Square</span>
-          </a>
-        </article>
-        <article class="plate" id="plate-es">
-          <div class="plate-top"><span class="num">02</span><span>Personal concept · not client work</span></div>
-          <div class="plate-main">
-            <a class="plate-name" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="ESTORA Suites, open the live site (opens in a new tab)">Estora Suites <span class="arr" aria-hidden="true">↗</span></a>
-            <p class="plate-desc hide-sm hide-compact">A luxury real estate website concept that presents a residential space through an immersive, cinematic digital experience, exploring visual storytelling, modern layouts, atmospheric imagery and refined interactions.</p>
-            <dl class="facts">
-              <div><dt>Type</dt><dd>Real estate website (fictional concept)</dd></div>
-              <div><dt>My role</dt><dd>Design and build</dd></div>
-              <div><dt>Live</dt><dd><a class="link" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true" class="ne">↗</span><span class="sr"> (opens in a new tab)</span></a></dd></div>
-            </dl>
-          </div>
-          <a class="plate-media" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" hidden>
-            <img data-src="assets/estora-suites.jpg" alt="" width="1280" height="800" decoding="async" hidden>
-          </a>
-        </article>
-        <p class="more hide-compact"><b>10+ websites</b> designed and built for Instagram-based businesses and brands. More case studies are on the way; examples are available on request. <a class="link" href="#contact" data-go="contact">Ask for examples</a></p>
+          <ul class="pj-list">
+            <li><a class="pj-row on" data-pj="ms" href="https://www.marketsquareexp.com/" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog"><span class="num">01</span><span class="pj-name">Market Square</span><span class="tag tag-client">Client project</span><span class="arr" aria-hidden="true">↗</span><span class="sr"> (opens project details)</span></a></li>
+            <li><a class="pj-row" data-pj="es" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog"><span class="num">02</span><span class="pj-name">ESTORA Suites</span><span class="tag">Personal project</span><span class="arr" aria-hidden="true">↗</span><span class="sr"> (opens project details)</span></a></li>
+            <li><a class="pj-row" data-pj="pf" href="https://alvingideontech.netlify.app/" target="_blank" rel="noopener noreferrer" aria-haspopup="dialog"><span class="num">03</span><span class="pj-name">This portfolio</span><span class="tag">Personal project</span><span class="arr" aria-hidden="true">↗</span><span class="sr"> (opens project details)</span></a></li>
+          </ul>
+          <p class="more hide-compact"><b>10+ websites</b> designed and built for Instagram-based businesses and brands. Examples are available on request. <a class="link" href="#contact" data-go="contact">Ask for examples</a></p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PANEL 3 — SERVICES AND EXPERIENCE -->
+  <!-- PANEL 3 — SERVICES, EXPERIENCE AND SKILLS -->
   <section class="panel p3" id="services" aria-labelledby="h-services">
     <div class="panel-inner">
       <div class="col-l">
         <p class="eyebrow"><span class="dot"></span>WHAT I BRING TO THE TABLE</p>
         <h2 class="display md" id="h-services">Creative thinking. Practical execution.</h2>
-        <p class="lede">From building web experiences to managing digital communication and administrative tasks, I combine creativity with organised, dependable execution.</p>
+        <p class="lede hide-sm">From building web experiences to managing digital communication and administrative tasks, I combine creativity with organised, dependable execution.</p>
+        <div class="actions"><a class="btn btn-ghost" href="assets/Alvin-Emmanuel-Gideon-CV.pdf" download="Alvin-Emmanuel-Gideon-CV.pdf" type="application/pdf">Download CV <span aria-hidden="true" class="dn">↓</span><span class="sr"> (PDF)</span></a></div>
       </div>
       <div class="col-r">
-        <ol class="rows">
-          <li><span class="num">01</span><h3>Website development &amp; design</h3><p class="hide-sm">Responsive sites for small businesses and Instagram-based brands on WordPress, Wix and GoDaddy.</p></li>
-          <li><span class="num">02</span><h3>Social media management</h3><p class="hide-sm">Content support, account organisation, digital presence and Facebook Ads.</p></li>
-          <li><span class="num">03</span><h3>Virtual assistance</h3><p class="hide-sm">Online research, scheduling, data entry and digital organisation.</p></li>
-          <li><span class="num">04</span><h3>Administrative support</h3><p class="hide-sm">Documentation, spreadsheets and organised workflows in Google Workspace.</p></li>
-          <li><span class="num">05</span><h3>Digital content &amp; creative support</h3><p class="hide-sm">Social graphics and visual materials created in Canva.</p></li>
-        </ol>
-        <div class="meta3">
-          <div><h4>Experience</h4><p><b>Social Media Manager</b>, AVM Studios<br><span class="mute">May 2025 – March 2026</span></p></div>
-          <div><h4>Tools</h4><p>Canva, Google Workspace, Microsoft PowerPoint, WordPress, Wix, GoDaddy, Facebook Ads</p></div>
-          <div class="hide-sm"><h4>Certified &amp; educated</h4><p>Digital and Social Media Marketing (Atingi Digital) · Facebook Ads Manager (Great Learning) · B.Sc. Computer Science, NOUN</p></div>
+        <div class="tabs" role="tablist" aria-label="Services, experience and skills">
+          <button class="tab" role="tab" id="tab-services" type="button" aria-selected="true" aria-controls="tp-services">Services</button>
+          <button class="tab" role="tab" id="tab-exp" type="button" aria-selected="false" tabindex="-1" aria-controls="tp-exp">Experience</button>
+          <button class="tab" role="tab" id="tab-skills" type="button" aria-selected="false" tabindex="-1" aria-controls="tp-skills">Skills</button>
+        </div>
+
+        <div class="tabpanel on" role="tabpanel" id="tp-services" aria-labelledby="tab-services">
+          <h3 class="tp-title">Services</h3>
+          <ol class="rows">
+            <li><span class="num">01</span><h4>Website development &amp; design</h4><p class="hide-sm">Responsive sites for small businesses and Instagram-based brands on WordPress, Wix and GoDaddy.</p></li>
+            <li><span class="num">02</span><h4>Social media management</h4><p class="hide-sm">Content support, account organisation, digital presence and Facebook Ads.</p></li>
+            <li><span class="num">03</span><h4>Virtual assistance</h4><p class="hide-sm">Online research, scheduling, data entry and digital organisation.</p></li>
+            <li><span class="num">04</span><h4>Administrative support</h4><p class="hide-sm">Documentation, spreadsheets and organised workflows in Google Workspace.</p></li>
+            <li><span class="num">05</span><h4>Digital content &amp; creative support</h4><p class="hide-sm">Social graphics and visual materials created in Canva.</p></li>
+          </ol>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="tp-exp" aria-labelledby="tab-exp" hidden>
+          <h3 class="tp-title">Experience</h3>
+          <ol class="tl">
+            <li class="tl-item on">
+              <button class="tl-btn" type="button" aria-expanded="true" aria-controls="tl-ama"><span class="tl-date">2025 – Present</span><span class="tl-role">Social Media Manager &amp; Graphic Designer</span><span class="tl-org">Anonymous Media Academy</span></button>
+              <div class="tl-body" id="tl-ama"><ul>
+                <li>Manage and grow social media platforms.</li>
+                <li>Develop content strategies and optimise performance.</li>
+                <li>Run Facebook Ads campaigns.</li>
+                <li>Produce high-quality graphics and marketing content.</li>
+              </ul></div>
+            </li>
+            <li class="tl-item">
+              <button class="tl-btn" type="button" aria-expanded="false" aria-controls="tl-avm"><span class="tl-date">May 2025 – March 2026</span><span class="tl-role">Social Media Manager</span><span class="tl-org">AVM Studios</span></button>
+              <div class="tl-body" id="tl-avm"><ul>
+                <li>Managed the academy's Instagram account and supported its day-to-day online activities.</li>
+                <li>Prepared and organised content for social media.</li>
+                <li>Created graphics and visual materials using Canva.</li>
+                <li>Assisted with audience engagement and communication.</li>
+                <li>Helped maintain the account's visual consistency.</li>
+                <li>Worked with digital tools to organise and manage social media tasks.</li>
+              </ul></div>
+            </li>
+            <li class="tl-item">
+              <button class="tl-btn" type="button" aria-expanded="false" aria-controls="tl-hc"><span class="tl-date">2024 – 2025</span><span class="tl-role">Canva Designer</span><span class="tl-org">Haircentric Salon &amp; Spa</span></button>
+              <div class="tl-body" id="tl-hc"><ul>
+                <li>Designed promotional graphics and branded content.</li>
+                <li>Improved visual identity across digital platforms.</li>
+                <li>Assisted in campaign creative direction.</li>
+              </ul></div>
+            </li>
+          </ol>
+          <div class="certs hide-compact"><h4>Certifications</h4><ul><li>Digital and Social Media Marketing <span class="mute">· Atingi Digital</span></li><li>Facebook Ads Manager <span class="mute">· Great Learning</span></li></ul><h4 class="edu-h">Education</h4><ul><li>B.Sc. Computer Science <span class="mute">· National Open University of Nigeria (NOUN)</span></li></ul></div>
+        </div>
+
+        <div class="tabpanel" role="tabpanel" id="tp-skills" aria-labelledby="tab-skills" hidden>
+          <h3 class="tp-title">Skills</h3>
+          <div class="skills">
+            <div class="sg"><h4>Web</h4><ul class="chips"><li>Website design</li><li>Website development</li><li>WordPress</li><li>Wix</li><li>GoDaddy</li></ul></div>
+            <div class="sg"><h4>Design &amp; content</h4><ul class="chips"><li>Canva</li><li>Graphic design</li><li>Brand identity</li><li>Content planning</li><li>Copywriting</li><li>Basic video editing</li></ul></div>
+            <div class="sg"><h4>Marketing</h4><ul class="chips"><li>Social media strategy</li><li>Facebook Ads</li><li>Community management</li><li>Analytics &amp; reporting</li><li>Trend research</li></ul></div>
+            <div class="sg"><h4>Productivity</h4><ul class="chips"><li>Google Workspace</li><li>Microsoft PowerPoint</li><li>Data entry</li><li>Research</li><li>Problem-solving</li></ul></div>
+          </div>
         </div>
       </div>
     </div>
@@ -176,13 +223,15 @@
         <div class="copy">
           <p class="lede">Have a project, a role, or a task that needs the right person? Get in touch and let's discuss it.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alvingideon380@gmail.com&amp;su=Hello%20Alvin" target="_blank" rel="noopener noreferrer">Start a conversation <span aria-hidden="true">→</span><span class="sr"> (opens Gmail in a new tab)</span></a>
+            <a class="btn btn-primary" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alvingideon380@gmail.com&amp;su=Job%20opportunity%3A%20Web%20Developer%20role&amp;body=Hello%20Alvin%2C%0A%0AI%20would%20like%20to%20talk%20to%20you%20about%20a%20role.%0A%0ARole%20and%20company%3A%0ALocation%20%2F%20remote%3A%0A%0AThanks%2C" target="_blank" rel="noopener noreferrer">Job opportunities <span aria-hidden="true">→</span><span class="sr"> (opens Gmail in a new tab)</span></a>
+            <a class="btn btn-ghost" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alvingideon380@gmail.com&amp;su=Freelance%20project%20enquiry&amp;body=Hello%20Alvin%2C%0A%0AI%20have%20a%20project%20in%20mind.%0A%0AWhat%20I%20need%3A%0ADeadline%3A%0A%0AThanks%2C" target="_blank" rel="noopener noreferrer">Freelance projects <span aria-hidden="true">→</span><span class="sr"> (opens Gmail in a new tab)</span></a>
           </div>
         </div>
         <dl class="contact-list">
           <div><dt>Email</dt><dd class="dd-flex"><a class="link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=alvingideon380@gmail.com&amp;su=Hello%20Alvin" target="_blank" rel="noopener noreferrer">alvingideon380@gmail.com<span class="sr"> (opens Gmail in a new tab)</span></a> <button class="copy-btn" id="copy-email" type="button" data-copy="alvingideon380@gmail.com" aria-label="Copy email address">Copy</button><span class="sr" id="copy-status" role="status" aria-live="polite"></span></dd></div>
-          <div><dt>Phone</dt><dd><a class="link" href="tel:+2348119590880">08119590880</a></dd></div>
+          <div><dt>Phone</dt><dd><a class="link" href="tel:+2349117308837">09117308837</a></dd></div>
           <div><dt>Location</dt><dd>Lagos State, Nigeria</dd></div>
+          <div><dt>CV</dt><dd><a class="link" href="assets/Alvin-Emmanuel-Gideon-CV.pdf" download="Alvin-Emmanuel-Gideon-CV.pdf" type="application/pdf">Download PDF <span aria-hidden="true">↓</span></a></dd></div>
         </dl>
       </div>
     </div>
@@ -200,9 +249,59 @@
 
 <footer class="site-foot" id="foot">
   <span class="f-copy">© <span id="year">2026</span> <span class="f-full">Alvin Emmanuel Gideon · Codex Designs</span><span class="f-short">Alvin Gideon</span></span>
-  <span class="f-desc">Website designer &amp; developer · Lagos State, Nigeria</span>
+  <span class="f-desc">Web Developer · Lagos State, Nigeria</span>
   <nav class="f-legal" aria-label="Legal"><a href="privacy.html">Privacy</a><a href="cookies.html">Cookies</a><a href="terms.html">Terms</a></nav>
 </footer>
+
+<!-- Project detail view (opened from the Work panel; content lives in the templates below) -->
+<dialog class="pd" id="pd" aria-labelledby="pd-title">
+  <div class="pd-sheet">
+    <div class="pd-top"><span class="pd-count" id="pd-count">01 / 03</span><button class="pd-close" id="pd-close" type="button">Close <span aria-hidden="true">×</span></button></div>
+    <div id="pd-body"></div>
+  </div>
+</dialog>
+
+<template id="t-ms">
+  <p class="pd-kicker"><span class="tag tag-client">Client project</span><span>Website</span></p>
+  <h3 class="pd-title" id="pd-title">Market Square</h3>
+  <figure class="pd-fig"></figure>
+  <p class="pd-brief">A completed client website project for MarketSquare Experiential Limited.</p>
+  <dl class="pd-facts">
+    <div><dt>Client</dt><dd>MarketSquare Experiential Limited</dd></div>
+    <div><dt>Type</dt><dd>Client project, website</dd></div>
+    <div><dt>My contribution</dt><dd>Details are available on request.</dd></div>
+    <!-- ADD once confirmed (real details only): <div><dt>My contribution</dt><dd>…</dd></div> and <div><dt>Tools</dt><dd>…</dd></div> -->
+  </dl>
+  <div class="actions"><a class="btn btn-primary" href="https://www.marketsquareexp.com/" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true" class="ne">↗</span><span class="sr"> (opens in a new tab)</span></a><button class="btn btn-ghost pd-next" type="button">Next project</button></div>
+</template>
+
+<template id="t-es">
+  <p class="pd-kicker"><span class="tag">Personal project</span><span>Website concept, not client work</span></p>
+  <h3 class="pd-title" id="pd-title">ESTORA Suites</h3>
+  <figure class="pd-fig"></figure>
+  <p class="pd-brief">A luxury real estate website concept that presents a residential space through an immersive, cinematic digital experience, exploring visual storytelling, modern layouts, atmospheric imagery and refined interactions.</p>
+  <dl class="pd-facts">
+    <div><dt>Type</dt><dd>Personal project (fictional concept)</dd></div>
+    <div><dt>My role</dt><dd>Design and build</dd></div>
+    <div><dt>Live site</dt><dd><a class="link" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer">estorasuites.netlify.app</a></dd></div>
+  </dl>
+  <div class="actions"><a class="btn btn-primary" href="https://estorasuites.netlify.app/" target="_blank" rel="noopener noreferrer">Visit live website <span aria-hidden="true" class="ne">↗</span><span class="sr"> (opens in a new tab)</span></a><button class="btn btn-ghost pd-next" type="button">Next project</button></div>
+</template>
+
+<template id="t-pf">
+  <p class="pd-kicker"><span class="tag">Personal project</span><span>Portfolio website</span></p>
+  <h3 class="pd-title" id="pd-title">This portfolio</h3>
+  <figure class="pd-fig"></figure>
+  <p class="pd-brief">My personal portfolio: an editorial, scroll-controlled website that presents my projects, services, experience and contact details.</p>
+  <dl class="pd-facts">
+    <div><dt>Type</dt><dd>Personal project, portfolio website</dd></div>
+    <div><dt>My role</dt><dd>Design and build</dd></div>
+    <div><dt>Built with</dt><dd>HTML, CSS and JavaScript. No frameworks or libraries.</dd></div>
+    <div><dt>Hosting</dt><dd>Netlify</dd></div>
+    <div><dt>Live site</dt><dd>alvingideontech.netlify.app (you are here)</dd></div>
+  </dl>
+  <div class="actions"><button class="btn btn-primary" type="button" data-close>Back to the site</button><button class="btn btn-ghost pd-next" type="button">Next project</button></div>
+</template>
 
 <script src="js/site.js"></script>
 </body>

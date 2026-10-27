@@ -249,12 +249,12 @@
     load();
   }
 
-  /* ---------- Optional project previews (assets/*.jpg); pages work without them ---------- */
+  /* ---------- Optional project previews (assets/*.jpg); the page works without them ---------- */
   $$('img[data-src]').forEach(function (img) {
     img.addEventListener('load', function () {
       img.hidden = false;
-      var a = img.parentNode; a.hidden = false; a.classList.add('has-img');
-      if (a.parentNode) a.parentNode.classList.add('has-media');
+      var f = img.closest ? img.closest('.pv') : null;
+      if (f) f.classList.add('has-img');
     });
     img.src = img.getAttribute('data-src');
   });
@@ -320,14 +320,14 @@
   $$('.display').forEach(splitWords);
   panels.forEach(function (p) {
     var k = 0;
-    $$('.eyebrow,.lede,.actions,.ident,.plate,.more,.rows li,.meta3>div,.contact-list>div,.cue', p).forEach(function (el) {
+    $$('.eyebrow,.lede,.actions,.ident,.pj-view,.pj-list li,.more,.tabs,.tabpanel.on,.contact-list>div,.cue', p).forEach(function (el) {
       el.setAttribute('data-r', ''); el.style.setProperty('--i', Math.min(k++, 9));
     });
   });
 
   /* ---------- Project preview pointer response (desktop only) ---------- */
   if (finePointer) {
-    $$('.plate-media').forEach(function (el) {
+    $$('.pj-view').forEach(function (el) {
       el.addEventListener('pointermove', function (e) {
         if (rm) return;
         var r = el.getBoundingClientRect();
@@ -337,6 +337,118 @@
       el.addEventListener('pointerleave', function () { pm.tx = 0; pm.ty = 0; request(); });
     });
   }
+
+  /* ---------- Skills chips: stagger index ---------- */
+  $$('.chips').forEach(function (ul) { $$('li', ul).forEach(function (li, k) { li.style.setProperty('--k', k); }); });
+
+  /* ---------- Credentials tabs (Services / Experience / Skills) ---------- */
+  (function () {
+    var tabs = $$('.tab');
+    if (!tabs.length) return;
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab, p = doc.getElementById(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1;
+        if (p) { p.hidden = !on; p.classList.toggle('on', on); }
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        var n = null;
+        if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+        else if (e.key === 'ArrowLeft') n = tabs[(i - 1 + tabs.length) % tabs.length];
+        else if (e.key === 'Home') n = tabs[0]; else if (e.key === 'End') n = tabs[tabs.length - 1];
+        if (n) { e.preventDefault(); select(n, true); }
+      });
+    });
+  })();
+
+  /* ---------- Experience timeline (one open at a time) ---------- */
+  (function () {
+    var items = $$('.tl-item');
+    items.forEach(function (it) {
+      var btn = $('.tl-btn', it);
+      btn.addEventListener('click', function () {
+        var willOpen = !it.classList.contains('on');
+        items.forEach(function (o) { o.classList.remove('on'); $('.tl-btn', o).setAttribute('aria-expanded', 'false'); });
+        if (willOpen) { it.classList.add('on'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  })();
+
+  /* ---------- Projects: preview switching + detail view ---------- */
+  (function () {
+    var rows = $$('.pj-row'), views = $$('.pv[data-pj]', $('.pj-view') || doc);
+    var dlg = $('#pd'), body = $('#pd-body'), count = $('#pd-count');
+    var order = ['ms', 'es', 'pf'], names = { ms: 'Market Square', es: 'ESTORA Suites', pf: 'This portfolio' };
+    var current = null, lastFocus = null, closeTimer = 0, busy = false;
+
+    function setPreview(key) {
+      rows.forEach(function (r) { r.classList.toggle('on', r.getAttribute('data-pj') === key); });
+      views.forEach(function (v) { v.classList.toggle('on', v.getAttribute('data-pj') === key); });
+    }
+    rows.forEach(function (r) {
+      var key = r.getAttribute('data-pj');
+      r.addEventListener('mouseenter', function () { setPreview(key); });
+      r.addEventListener('focus', function () { setPreview(key); });
+    });
+
+    function render(key) {
+      var t = $('#t-' + key); if (!t || !body) return;
+      body.innerHTML = ''; body.appendChild(t.content.cloneNode(true));
+      var slot = $('.pd-fig', body), src = $('.pv[data-pj="' + key + '"]');
+      if (slot && src) {
+        var c = src.cloneNode(true); c.classList.remove('on'); c.removeAttribute('data-pj'); slot.appendChild(c);
+        requestAnimationFrame(function () { requestAnimationFrame(function () { c.classList.add('on'); }); });
+      }
+      var next = order[(order.indexOf(key) + 1) % order.length], nb = $('.pd-next', body);
+      if (nb) { nb.textContent = 'Next: ' + names[next] + ' →'; nb.addEventListener('click', function () { swap(next); }); }
+      $$('[data-close]', body).forEach(function (b) { b.addEventListener('click', close); });
+      if (count) count.textContent = '0' + (order.indexOf(key) + 1) + ' / 0' + order.length;
+      current = key;
+    }
+    function swap(key) {
+      if (busy) return; busy = true;
+      if (rm) { render(key); busy = false; return; }
+      body.classList.add('swap');
+      setTimeout(function () { render(key); $('.pd-sheet', dlg).scrollTop = 0; body.classList.remove('swap'); busy = false; }, 200);
+    }
+    function open(key, trigger) {
+      if (!dlg) return;
+      clearTimeout(closeTimer);
+      lastFocus = trigger || doc.activeElement;
+      render(key);
+      root.classList.add('pd-open');
+      if (dlg.showModal) { if (!dlg.open) dlg.showModal(); } else dlg.setAttribute('open', '');
+      $('.pd-sheet', dlg).scrollTop = 0;
+      requestAnimationFrame(function () { requestAnimationFrame(function () { dlg.classList.add('open'); }); });
+    }
+    function close() {
+      if (!dlg || !dlg.open) return;
+      dlg.classList.remove('open');
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () {
+        if (dlg.close) dlg.close(); else dlg.removeAttribute('open');
+        root.classList.remove('pd-open');
+        if (lastFocus && lastFocus.focus) lastFocus.focus();
+      }, rm ? 0 : 520);
+    }
+    if (dlg) {
+      dlg.addEventListener('cancel', function (e) { e.preventDefault(); close(); });
+      dlg.addEventListener('click', function (e) { if (e.target === dlg) close(); });
+      var cb = $('#pd-close'); if (cb) cb.addEventListener('click', close);
+    }
+    // Rows and CTA open the detail view; modified clicks and no-JS keep the plain link to the live site.
+    $$('[data-pj].pj-row, [data-open]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button) return;
+        e.preventDefault();
+        open(a.getAttribute('data-pj') || a.getAttribute('data-open'), a);
+      });
+    });
+  })();
 
   /* ---------- Copy email (real action with visible + announced confirmation) ---------- */
   (function () {

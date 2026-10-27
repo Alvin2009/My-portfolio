@@ -45,3 +45,20 @@ All motion lives in the existing `js/site.js` frame loop and `css/style.css`; no
 - **Copy email:** a real action with visible and screen-reader confirmation.
 - **Reduced motion / no JavaScript:** everything shows immediately as a normal stacked page; no stagger, parallax, loops or smooth scrolling.
 Tune pacing with `CUES` in `js/site.js`, the `.track` height (460vh) and the delays in the "Motion system" block of the CSS.
+
+## CV (Download CV buttons)
+`assets/Alvin-Emmanuel-Gideon-CV.pdf` is a one-page Web Developer CV built from the portfolio's verified content
+(profile, three roles, web projects, skills, certifications, B.Sc. Computer Science at NOUN, phone 09117308837).
+It deliberately leaves out full-stack development and trading. To replace it with your own file, keep the same
+name (or search for `Alvin-Emmanuel-Gideon-CV.pdf` in `index.html` and update the three buttons).
+
+## Project detail view
+Clicking a project row in the Work panel opens a dialog (`<dialog id="pd">`) filled from the `<template id="t-...">`
+blocks at the bottom of `index.html`. Esc or Close dismisses it and returns focus. Each project is tagged
+"Client project" or "Personal project". In `t-ms` (Market Square), add your confirmed contribution and tools as new
+`<div><dt>...</dt><dd>...</dd></div>` rows; until then it says only that details are available on request.
+Optional previews: `assets/market-square.jpg`, `assets/estora-suites.jpg`, `assets/portfolio.jpg` (about 1280x800, JPG).
+
+## Contact actions
+Two Gmail-compose links with different subjects: "Job opportunities" and "Freelance projects".
+There is no form, so there is no success message to fake.
