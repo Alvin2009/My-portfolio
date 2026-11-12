@@ -1,6 +1,6 @@
 # my-portfolio
 
-Static portfolio for Alvin Emmanuel Gideon (plain HTML/CSS/JS, hosted on Netlify, no build step).
+Static portfolio for Kingsley Matthew (plain HTML/CSS/JS, hosted on Netlify, no build step).
 Fonts: Inter Tight via Google Fonts (loaded non-blocking).
 
 - `index.html` content (four scroll-driven panels) · `css/style.css` styles · `js/site.js` scroll, video scrub, preloader, menu
@@ -47,10 +47,10 @@ All motion lives in the existing `js/site.js` frame loop and `css/style.css`; no
 Tune pacing with `CUES` in `js/site.js`, the `.track` height (460vh) and the delays in the "Motion system" block of the CSS.
 
 ## CV (Download CV buttons)
-`assets/Alvin-Emmanuel-Gideon-CV.pdf` is a one-page Web Developer CV built from the portfolio's verified content
+`assets/Kingsley-Matthew-CV.pdf` is a one-page Web Developer CV built from the portfolio's verified content
 (profile, three roles, web projects, skills, certifications, B.Sc. Computer Science at NOUN, phone 09117308837).
 It deliberately leaves out full-stack development and trading. To replace it with your own file, keep the same
-name (or search for `Alvin-Emmanuel-Gideon-CV.pdf` in `index.html` and update the three buttons).
+name (or search for `Kingsley-Matthew-CV.pdf` in `index.html` and update the three buttons).
 
 ## Project detail view
 Clicking a project row in the Work panel opens a dialog (`<dialog id="pd">`) filled from the `<template id="t-...">`

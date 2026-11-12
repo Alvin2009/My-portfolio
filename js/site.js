@@ -1,4 +1,4 @@
-/* Alvin Emmanuel Gideon — scroll-scrubbed portfolio. Vanilla JS, no dependencies. */
+/* Kingsley Matthew — scroll-scrubbed portfolio. Vanilla JS, no dependencies. */
 (function () {
   'use strict';
 
